@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}{% load static %} {% block content %}
+<!--==============================
+    Breadcumb
+============================== -->
+
+<!--==============================
+    Blog Area
+==============================-->
+<section class="donation-details space-top space-extra2-bottom">
+	<div class="container">
+		<div class="row gx-40">
+			<div class="col-xxl-2 col-lg-3"></div>
+			<div class="col-xxl-8 col-lg-6">
+				<div class="donation-form-v1">
+					<p class="donation-form-notice">
+						<i class="fa-solid fa-triangle-exclamation"></i
+						><span class="text-title">Notice:</span> Test mode is enabled. While
+						in test mode no live donations are processed.
+					</p>
+					{% if messages %} {% for message in messages %}
+					<div class="message-boxes-item type-error mb-20">
+						<div class="text">{{ message }}</div>
+						<i class="icon-close"></i>
+					</div>
+
+					{% endfor %} {% endif %}
+					<form method="post" class="contact-form">
+						{% csrf_token %}
+						<h5 class="title mb-25">Sign Up</h5>
+						<div class="row">
+							<div class="form-group style-border">
+								<input
+									type="text"
+									class="form-control"
+									name="otp"
+									id="name"
+									placeholder="Enter Otp"
+								/>
+							</div>
+						</div>
+						<div class="form-btn col-12">
+							<button class="th-btn" type="submit">
+								<i class="fas fa-heart me-2"></i> Donate Now
+							</button>
+						</div>
+						<p class="form-messages mb-0 mt-3"></p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
