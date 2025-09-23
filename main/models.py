@@ -20,6 +20,8 @@ class AppUser(models.Model):
 
 class Donation(models.Model):
     image_one = models.FileField(upload_to='account_files/profile_photos/', blank=True, default="none")
+    image_three = models.FileField(upload_to='account_files/profile_photos/', blank=True, default="none")
+    image_four = models.FileField(upload_to='account_files/profile_photos/', blank=True, default="none")
     title = models.CharField(max_length=50, default="none")
     description = models.TextField(default="none")
     goal = models.CharField(max_length=20, default="none")  # Target amount for the fundraiser
@@ -35,6 +37,9 @@ class Donation(models.Model):
     target_seven = models.CharField(max_length=1020, default="none")
     more_info = models.TextField(default="none")
     image_two = models.FileField(upload_to='account_files/profile_photos/', blank=True, default="none")
+    website = models.CharField(max_length=1020, default="none")
+    project_type = models.CharField(max_length=1020, default="none")
+    location = models.CharField(max_length=1020, default="none")
 
     app_user = models.ForeignKey(AppUser, on_delete=models.CASCADE)  # Link to the fundraiser creator
 

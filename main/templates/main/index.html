@@ -57,8 +57,8 @@
 										class="btn-one"
 										data-animation="fadeInUp"
 										data-delay=".8s"
-										href="page-contact.html"
-										>free consultation</a
+										href="{% url 'main:donations' %}"
+										>Get Started</a
 									>
 								</div>
 							</div>
@@ -1195,44 +1195,49 @@
 				data-wow-delay="00ms"
 				data-wow-duration="1500ms"
 			>
-				Case study
+				Recent Listings
 			</h6>
 			<h2 class="title wow splt-txt" data-splitting>
-				Showcasing Project & Solutions <br />
-				for Clients case study.
+				Checkout our recent listings <br />
+				From top startups seeking your support.
 			</h2>
 		</div>
 		<div class="swiper case-slider">
 			<div class="swiper-wrapper">
+				{% for donation in donations %}
 				<div class="swiper-slide">
 					<div class="case-block">
 						<div class="inner-box">
 							<figure class="image">
-								<img
-									src="{% static 'assets/images/case/case-image1.jpg' %}"
-									alt="Image"
-								/>
+								<img src="{{ donation.image_one.url }}" alt="Image" />
 							</figure>
 							<div class="content-box">
-								<span class="sub-title">Cyber Security</span>
+								<span class="sub-title"
+									>{{ donation.app_user.user.username }}</span
+								>
 								<h4 class="title">
-									<a href="page-case.html">Revolutionizing Brand Strategy</a>
+									<a href="page-case.html">{{ donation.title }}</a>
 								</h4>
 							</div>
-							<a class="arry-btn" href="page-case-details.html"
+							<a
+								class="arry-btn"
+								href="{% url 'main:donation_details' donation.id %}"
 								><i class="fa-regular fa-arrow-up-right"></i
 							></a>
 							<div class="hover-content">
-								<span class="sub-title">Cyber Security</span>
+								<span class="sub-title"
+									>{{ donation.app_user.user.username }}</span
+								>
 								<h4 class="title">
-									<a href="page-case-details.html"
-										>Revolutionizing Brand Strategy</a
+									<a href="{% url 'main:donation_details' donation.id %}"
+										>{{ donation.title }}</a
 									>
 								</h4>
 							</div>
 						</div>
 					</div>
 				</div>
+				{% endfor %}
 				<div class="swiper-slide">
 					<div class="case-block">
 						<div class="inner-box">
@@ -1608,196 +1613,6 @@
 	</div>
 </section>
 <!-- Strategy area end here -->
-
-<!-- Team area start here -->
-<section class="team-section pt-120 pb-120">
-	<div
-		class="team-shape wow slideInLeft"
-		data-wow-delay="00ms"
-		data-wow-duration="1500ms"
-	>
-		<img
-			class="sway__animation"
-			src="{% static 'assets/images/shape/team-shape.png' %}"
-			alt="Image"
-		/>
-	</div>
-	<div class="container">
-		<div class="sec-title center mb-50">
-			<h6
-				class="sub-title wow fadeInUp"
-				data-wow-delay="00ms"
-				data-wow-duration="1500ms"
-			>
-				Top Consultant
-			</h6>
-			<h2 class="title wow splt-txt" data-splitting>
-				Enhance Your Experience with <br />
-				Expert Consulting
-			</h2>
-		</div>
-
-		<div class="row g-4">
-			<div
-				class="col-md-6 col-xl-3 wow fadeInUp"
-				data-wow-delay="00ms"
-				data-wow-duration="1500ms"
-			>
-				<div class="team-block">
-					<div class="inner-box">
-						<figure class="image">
-							<img
-								src="{% static 'assets/images/team/team-image1.jpg' %}"
-								alt="Image"
-							/>
-						</figure>
-						<div class="socials">
-							<i class="fa-solid fa-plus"></i>
-							<ul>
-								<li>
-									<a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-behance"></i></a>
-								</li>
-							</ul>
-						</div>
-						<div class="content-box">
-							<h4 class="title">
-								<a href="page-team-details.html">Guy Hawkins</a>
-							</h4>
-							<p class="sub-title">Admin</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div
-				class="col-md-6 col-xl-3 wow fadeInUp"
-				data-wow-delay="200ms"
-				data-wow-duration="1500ms"
-			>
-				<div class="team-block">
-					<div class="inner-box">
-						<figure class="image">
-							<img
-								src="{% static 'assets/images/team/team-image2.jpg' %}"
-								alt="Image"
-							/>
-						</figure>
-						<div class="socials">
-							<i class="fa-solid fa-plus"></i>
-							<ul>
-								<li>
-									<a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-behance"></i></a>
-								</li>
-							</ul>
-						</div>
-						<div class="content-box">
-							<h4 class="title">
-								<a href="page-team-details.html">Jacob Jones</a>
-							</h4>
-							<p class="sub-title">Manager</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div
-				class="col-md-6 col-xl-3 wow fadeInUp"
-				data-wow-delay="400ms"
-				data-wow-duration="1500ms"
-			>
-				<div class="team-block">
-					<div class="inner-box">
-						<figure class="image">
-							<img
-								src="{% static 'assets/images/team/team-image3.jpg' %}"
-								alt="Image"
-							/>
-						</figure>
-						<div class="socials">
-							<i class="fa-solid fa-plus"></i>
-							<ul>
-								<li>
-									<a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-behance"></i></a>
-								</li>
-							</ul>
-						</div>
-						<div class="content-box">
-							<h4 class="title">
-								<a href="page-team-details.html">Kristin Watson</a>
-							</h4>
-							<p class="sub-title">Consultant</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div
-				class="col-md-6 col-xl-3 wow fadeInUp"
-				data-wow-delay="600ms"
-				data-wow-duration="1500ms"
-			>
-				<div class="team-block">
-					<div class="inner-box">
-						<figure class="image">
-							<img
-								src="{% static 'assets/images/team/team-image4.jpg' %}"
-								alt="Image"
-							/>
-						</figure>
-						<div class="socials">
-							<i class="fa-solid fa-plus"></i>
-							<ul>
-								<li>
-									<a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-								</li>
-								<li>
-									<a href="#0"><i class="fa-brands fa-behance"></i></a>
-								</li>
-							</ul>
-						</div>
-						<div class="content-box">
-							<h4 class="title">
-								<a href="page-team-details.html">Bessie Cooper</a>
-							</h4>
-							<p class="sub-title">Founder</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Team area end here -->
 
 <!-- Faq area start here -->
 <section class="faq-section">

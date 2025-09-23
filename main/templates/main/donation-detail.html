@@ -280,30 +280,67 @@
         <div class="col-xl-7 col-lg-8 mb-5 mb-lg-0">
           <div class="sec-title mb-40">
             <h6 class="sub-title wow fadeInUp bg-transparent ps-0" data-wow-delay="00ms" data-wow-duration="1500ms">About The Project</h6>
-            <h2 class="title mb-30 wow splt-txt" data-splitting>Deeper Dive into Our Digital Product Design Masterpieces</h2>
-            <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Sed ut perspiciatis unde omniste natus voluptatem accusantiume rem  aperia eaque ipsa quae abillo inventore veritatis quasi architecto beatae vitae dicta sunt explicabo. Nemo enim epsam voluptatem quia voluptas aspernatur odites sed quia consequunture</p>
+            <h2 class="title mb-30 wow splt-txt" data-splitting>{{ donation.title }}</h2>
+            <p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{{ donation.description }}</p>
+            <div class="progress mt-30">
+              <div class="progress-single">
+                
+                <div class="bar">
+                  <div
+                    class="bar-inner count-bar"
+                    data-percent=" {{ donation.percentage_raised|floatformat:0 }}%"
+                  >
+                    <div class="count-text">
+                      {{ donation.percentage_raised|floatformat:0 }}%
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style="
+                    
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 14px;
+                  "
+                >
+                  <span class="donation-card_raise">
+                    Raised
+                    <span class="donation-card_raise-number"
+                      >₦{{ donation.amount_donated|floatformat:2 }}</span
+                    >
+                  </span>
+                  <span class="donation-card_goal">
+                    Goal
+                    <span class="donation-card_goal-number"
+                      >₦{{ donation.goal|floatformat:2 }}</span
+                    >
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-          <a class="btn-two" href="page-contact.html">Visit Website <i class="fas fa-angle-right"></i></a>
+          <a class="btn-two" href="{{ donation.website }}">Visit Website <i class="fas fa-angle-right"></i></a>
+          <a class="btn-one" href="{% url 'main:donate_now' donation.id %}">Invest In Business <i class="fas fa-angle-right"></i></a>
         </div>
         <div class="col-xl-3 offset-xl-1 col-lg-4">
           <div class="project-details__content-right mt-0">
             <div class="project-details__details-box rounded-0">
               <ul class="list-unstyled project-details__details-list">
                 <li>
-                  <h4 class="project-details__name mb-2">Clients</h4>
-                  <p class="project-details__client">Design Studio In USA</p>
+                  <h4 class="project-details__name mb-2">Location</h4>
+                  <p class="project-details__client">{{ donation.location }}</p>
                 </li>
                 <li>
                   <h4 class="project-details__name mb-2">Project Type</h4>
-                  <p class="project-details__client">Digital Product Design</p>
+                  <p class="project-details__client">{{ donation.project_type }}</p>
                 </li>
                 <li>
                   <h4 class="project-details__name mb-2">Date</h4>
-                  <p class="project-details__client">25 October 2023</p>
+                  <p class="project-details__client">{{ donation.pub_date }}</p>
                 </li>
                 <li>
                   <h4 class="project-details__name mb-2">Website</h4>
-                  <p class="project-details__client"><a href="yourdomain.html">yourdomain.com</a></p>
+                  <p class="project-details__client"><a href="{{ donation.website }}">{{ donation.website }}</a></p>
                 </li>
               </ul>
             </div>
@@ -313,29 +350,29 @@
       <div class="row mb-5 mb-lg-0">
         <div class="col-lg-4 col-md-6">
           <div class="project-details__top mt-5">
-            <div class="project-details__img"> <img class="rounded-0" src="{% static 'assets/images/resource/project-details-1.jpg' %}" alt=""> </div>
+            <div class="project-details__img"> <img class="rounded-0" src="{{ donation.image_three.url }}" alt=""> </div>
           </div>
         </div>
         <div class="col-lg-8 col-md-6">
           <div class="project-details__top mt-5">
-            <div class="project-details__img"> <img class="rounded-0" src="{% static 'assets/images/resource/project-details-2.jpg' %}" alt=""> </div>
+            <div class="project-details__img"> <img class="rounded-0" src="{{ donation.image_four.url }}" alt=""> </div>
           </div>
         </div>
       </div>
       <div class="row align-items-lg-center">
         <div class="col-lg-6">
           <div class="sec-title mb-40">
-            <h2 class="title mb-30 wow splt-txt" data-splitting>Interesting facts in <br class="d-none d-lg-block"> Development</h2>
+            <h2 class="title mb-30 wow splt-txt" data-splitting>Interesting facts About <br class="d-none d-lg-block"> Development</h2>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="project-details__top mt-lg-5">
-            <div class="text mb-40">Must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter</div>
+            <div class="text mb-40">{{ donation.about }}</div>
             <ul class="project-list mb-5">
-              <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> Efficient Sprint Planning</li>
-              <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> Standups and Demos</li>
-              <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> Iterative Delivery Approach</li>
-              <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> Problem-solving</li>
+              <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> {{ donation.target_one }}</li>
+              <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> {{ donation.target_two }}</li>
+              <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> {{ donation.target_three }}</li>
+              <li class="d-flex align-items-center"><i class="icon fa-classic fa-solid fa-check fa-fw"></i> {{ donation.target_four }}</li>
             </ul>
           </div>
         </div>
@@ -349,14 +386,14 @@
         </div>
         <div class="col-lg-6">
           <div class="project-details__top mt-lg-5">
-            <div class="text mb-40">Will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness rejects, dislikes, or avoids pleasure </div>
+            <div class="text mb-40">{{ donation.summary }} </div>
             <div class="project-list-item mb-5">
-              <h5 class="title"><i class="icon fa-classic fa-solid fa-circle-check fa-fw mr-15"></i> Support clients</h5>
-              <div class="text">Sed ut perspiciatis unde omnis natus voluptatem accusantium doloremque laudantium, totam rem aperiam inventore</div>
+              <h5 class="title"><i class="icon fa-classic fa-solid fa-circle-check fa-fw mr-15"></i> {{ donation.target_five }}</h5>
+              <div class="text">{{ donation.challenge }}</div>
             </div>
             <div class="project-list-item">
-              <h5 class="title"><i class="icon fa-classic fa-solid fa-circle-check fa-fw mr-15"></i> Solve problems</h5>
-              <div class="text">Sed ut perspiciatis unde omnis natus voluptatem accusantium doloremque laudantium, totam rem aperiam inventore</div>
+              <h5 class="title"><i class="icon fa-classic fa-solid fa-circle-check fa-fw mr-15"></i> {{ donation.target_five }}</h5>
+              <div class="text">{{ donation.more_info }}</div>
             </div>
           </div>
         </div>
@@ -373,27 +410,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xl-12">
-          <div class="project-details__pagination-box">
-            <ul class="project-details__pagination list-unstyled">
-              <li class="next text-start">
-                <div class="content">Previous</div>
-                <h4 class="title"> <a href="#">Business Website Design</a> </h4>
-              </li>
-              <li class="count"><a href="#"></a></li>
-              <li class="count"><a href="#"></a></li>
-              <li class="count"><a href="#"><img src="{% static 'assets/images/resource/pagination-bar.png' %}" alt=""></a></li>
-              <li class="count"><a href="#"></a></li>
-              <li class="count"><a href="#"></a></li>
-              <li class="previous text-end">
-                <div class="content">Next</div>
-                <h4 class="title"> <a href="#">	Mobile Application Design</a> </h4>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </section>
   <!--Project Details End-->
