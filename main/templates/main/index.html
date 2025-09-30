@@ -57,7 +57,7 @@
 										class="btn-one"
 										data-animation="fadeInUp"
 										data-delay=".8s"
-										href="{% url 'main:donations' %}"
+										href="{% url 'main:businesses' %}"
 										>Get Started</a
 									>
 								</div>
@@ -1221,7 +1221,7 @@
 							</div>
 							<a
 								class="arry-btn"
-								href="{% url 'main:donation_details' donation.id %}"
+								href="{% url 'main:business_details' donation.id %}"
 								><i class="fa-regular fa-arrow-up-right"></i
 							></a>
 							<div class="hover-content">
@@ -1229,7 +1229,7 @@
 									>{{ donation.app_user.user.username }}</span
 								>
 								<h4 class="title">
-									<a href="{% url 'main:donation_details' donation.id %}"
+									<a href="{% url 'main:business_details' donation.id %}"
 										>{{ donation.title }}</a
 									>
 								</h4>

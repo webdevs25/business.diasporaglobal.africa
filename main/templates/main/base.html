@@ -5,7 +5,9 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>
-			Consultez - Business Consulting HTML Template | Home Page 01 Dark
+			Business Investment - Diversify your portfolio with high-potential
+			ventures while supporting innovation and economic development in global
+			communities.
 		</title>
 		<!-- Stylesheets -->
 		<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
@@ -25,12 +27,12 @@
 
 		<link
 			rel="shortcut icon"
-			href="{% static 'assets/images/favicon.png' %}"
+			href="{% static 'assets/images/logo2.png' %}"
 			type="image/x-icon"
 		/>
 		<link
 			rel="icon"
-			href="{% static 'assets/images/favicon.png' %}"
+			href="{% static 'assets/images/logo2.png' %}"
 			type="image/x-icon"
 		/>
 		<!-- Responsive -->
@@ -53,26 +55,22 @@
 							<ul class="info-list">
 								<li>
 									<i class="fa-solid fa-envelope"></i>
-									<a
-										href="https://html.kodesolution.com/cdn-cgi/l/email-protection#39575c5c5d515c5549795a565449585740175a5654"
+									<a href="mailto:info@diasporaglobal.africa"
 										><span
 											class="__cf_email__"
 											data-cfemail="68060d0d0c000d0418280b070518090611460b0705"
-											>[email&#160;protected]</span
+											>info@diasporaglobal.africa/</span
 										></a
 									>
 								</li>
-								<li>
-									<i class="fa-solid fa-location-dot"></i> 6391 Elgin St.
-									Celina, Delaware 10299
-								</li>
+								<li><i class="fa-solid fa-location-dot"></i> United Kingdom</li>
 							</ul>
 						</div>
 						<div class="top-right">
 							<ul class="useful-links">
-								<li><a href="page-about.html">About</a></li>
-								<li><a href="page-faq.html">Faqs</a></li>
-								<li><a href="page-contact.html">Contact</a></li>
+								<li><a href="#">About</a></li>
+								<li><a href="#">Faqs</a></li>
+								<li><a href="#">Contact</a></li>
 							</ul>
 							<ul class="top-social-icon">
 								<li>
@@ -99,9 +97,10 @@
 						<div class="logo">
 							<a href="#"
 								><img
-									src="{% static 'assets/images/logo-light.png' %}"
+									src="{% static 'assets/images/logo2.png' %}"
 									alt=""
 									title="Consultez"
+									style="width: 100px"
 							/></a>
 						</div>
 					</div>
@@ -109,128 +108,17 @@
 					<div class="nav-outer">
 						<nav class="nav main-menu">
 							<ul class="navigation">
-								<li class="dropdown">
-									<a href="#">Home</a>
-									<ul>
-										<li><a href="index.html">Home page 01</a></li>
-										<li><a href="index-2.html">Home page 02</a></li>
-										<li><a href="index-3.html">Home page 03</a></li>
-										<li><a href="index-4.html">Home page 04</a></li>
-										<li><a href="index-5.html">Home page 05</a></li>
-										<li><a href="index-6.html">Home page 06</a></li>
-										<li><a href="index-7.html">Home page 07</a></li>
-										<li class="dropdown">
-											<a href="#">Single Styles</a>
-											<ul>
-												<li>
-													<a href="index-1-single.html">Single Styles One</a>
-												</li>
-												<li>
-													<a href="index-2-single.html">Single Styles Two</a>
-												</li>
-												<li>
-													<a href="index-3-single.html">Single Styles Three</a>
-												</li>
-												<li>
-													<a href="index-4-single.html">Single Styles Four</a>
-												</li>
-												<li>
-													<a href="index-5-single.html">Single Styles Five</a>
-												</li>
-												<li>
-													<a href="index-6-single.html">Single Styles Six</a>
-												</li>
-												<li>
-													<a href="index-7-single.html">Single Styles Seven</a>
-												</li>
-											</ul>
-										</li>
-										<li class="dropdown">
-											<a href="#">Dark Styles</a>
-											<ul>
-												<li><a href="index-1-dark.html">Dark Styles One</a></li>
-												<li><a href="index-2-dark.html">Dark Styles Two</a></li>
-												<li>
-													<a href="index-3-dark.html">Dark Styles Three</a>
-												</li>
-												<li>
-													<a href="index-4-dark.html">Dark Styles Four</a>
-												</li>
-												<li>
-													<a href="index-5-dark.html">Dark Styles Five</a>
-												</li>
-												<li><a href="index-6-dark.html">Dark Styles Six</a></li>
-												<li>
-													<a href="index-7-dark.html">Dark Styles Seven</a>
-												</li>
-											</ul>
-										</li>
-										<li><a href="index-1-rtl.html">RTL Style</a></li>
-									</ul>
+								<li class="">
+									<a href="{% url 'main:index' %}">Home</a>
 								</li>
-								<li class="dropdown">
-									<a href="#">Pages</a>
-									<ul>
-										<li><a href="page-about.html">About</a></li>
-										<li><a href="page-faq.html">Faq</a></li>
-										<li><a href="page-pricing.html">Pricing</a></li>
-										<li class="dropdown">
-											<a href="#">Team</a>
-											<ul>
-												<li><a href="page-team.html">Team List</a></li>
-												<li>
-													<a href="page-team-details.html">Team Details</a>
-												</li>
-											</ul>
-										</li>
-										<li class="dropdown">
-											<a href="#">Shop</a>
-											<ul>
-												<li><a href="shop-products.html">Products</a></li>
-												<li>
-													<a href="shop-products-sidebar.html"
-														>Products with Sidebar</a
-													>
-												</li>
-												<li>
-													<a href="shop-product-details.html"
-														>Product Details</a
-													>
-												</li>
-												<li><a href="shop-cart.html">Cart</a></li>
-												<li><a href="shop-checkout.html">Checkout</a></li>
-											</ul>
-										</li>
-										<li><a href="page-testimonial.html">Testimonials</a></li>
-										<li><a href="page-404.html">404</a></li>
-									</ul>
+								<li class="">
+									<a href="{% url 'main:businesses' %}">Businesses</a>
 								</li>
-								<li class="dropdown">
+								<li class="">
 									<a href="#">Services</a>
-									<ul>
-										<li><a href="page-services.html">Services</a></li>
-										<li>
-											<a href="page-service-details.html">Services Details</a>
-										</li>
-									</ul>
 								</li>
-								<li class="dropdown">
-									<a href="#">Portfolio</a>
-									<ul>
-										<li><a href="page-case.html">Portfolio</a></li>
-										<li>
-											<a href="page-case-details.html">Portfolio Details</a>
-										</li>
-									</ul>
-								</li>
-								<li class="dropdown">
-									<a href="#">News</a>
-									<ul>
-										<li><a href="news-grid.html">News Grid</a></li>
-										<li><a href="news-details.html">News Details</a></li>
-									</ul>
-								</li>
-								<li><a href="page-contact.html">Contact</a></li>
+
+								<li><a href="#">Contact</a></li>
 							</ul>
 						</nav>
 						<!-- Main Menu End-->
@@ -244,7 +132,7 @@
 									<a href="tel:00222222200">+00 2222 222 00</a>
 								</div>
 							</div>
-							<a class="btn-two" href="page-contact.html">Contact Now</a>
+							<a class="btn-two" href="#">Contact Now</a>
 						</div>
 						<div class="mobile-nav-toggler d-block d-lg-none">
 							<i class="icon lnr-icon-bars text-white"></i>

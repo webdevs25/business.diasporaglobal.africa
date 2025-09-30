@@ -42,12 +42,12 @@ def DonationsView(request):
         }
         return render(request, "main/donation.html", context)
     
-def DonationDetailsView(request, donation_id):
+def DonationDetailsView(request, business_id):
     if request.method == "POST":
         pass
     else:
         # Fetch the specific donation by its ID
-        donation = get_object_or_404(Donation, id=donation_id)
+        donation = get_object_or_404(Donation, id=business_id)
         
         # Access the app_user who created the donation
         app_user = donation.app_user
@@ -58,9 +58,9 @@ def DonationDetailsView(request, donation_id):
         }
         return render(request, "main/donation-detail.html", context)
 
-def DonateNowView(request, donation_id):
+def DonateNowView(request, business_id):
     # Fetch the donation object
-    donation = get_object_or_404(Donation, id=donation_id)
+    donation = get_object_or_404(Donation, id=business_id)
 
     if request.method == "POST":
         # Get the donation amount and anonymous status from the POST data
@@ -74,7 +74,7 @@ def DonateNowView(request, donation_id):
                 raise ValueError("Amount must be greater than 0.")
         except (ValueError, TypeError):
             messages.error(request, "Invalid donation amount. Please enter a valid number.")
-            return redirect(reverse("main:donate_now", args=[donation_id]))
+            return redirect(reverse("main:donate_now", args=[business_id]))
 
         # Create a Contribution object
         contribution = Contribution(
@@ -86,7 +86,7 @@ def DonateNowView(request, donation_id):
         contribution.save()  # This will trigger the save() method in the Contribution model
 
         messages.success(request, "Thank you for your donation!")
-        return redirect(reverse("main:donation_details", args=[donation_id]))
+        return redirect(reverse("main:donation_details", args=[business_id]))
 
     context = {
         "donation": donation,

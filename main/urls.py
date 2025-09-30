@@ -6,9 +6,9 @@ app_name = "main"
 urlpatterns = [
 
 	path("", views.IndexView, name="index"),
-    path("donations/", views.DonationsView, name="donations"),
-    path('donations/<int:donation_id>/', views.DonationDetailsView, name='donation_details'),
-    path('donate-now/<int:donation_id>/', views.DonateNowView, name='donate_now'),
+    path("businesses/", views.DonationsView, name="businesses"),
+    path('businesses/<int:business_id>/', views.DonationDetailsView, name='business_details'),
+    path('invest-now/<int:business_id>/', views.DonateNowView, name='invest_now'),
     path("sign-up/", views.SignUpView, name="sign_up"),
     path("complete/", views.CompleteSignUpView, name="complete_sign_up"),
 
