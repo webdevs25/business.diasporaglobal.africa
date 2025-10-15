@@ -48,10 +48,10 @@
 										data-animation="fadeInUp"
 										data-delay=".3s"
 									>
-										Growth, Innovation, and Success
+										Invest in business in the diapora
 									</h6>
 									<h1 class="title" data-animation="fadeInUp" data-delay=".5s">
-										transforming <span>business growth</span> Drive Success
+										Diversify your <span>investment portfolio</span> on the go
 									</h1>
 									<a
 										class="btn-one"
@@ -64,8 +64,9 @@
 							</div>
 							<div class="col-lg-4">
 								<p class="text" data-animation="fadeInUp" data-delay=".9s">
-									Take your brand to new heights Agency offering everything from
-									strategy business.
+									Diversify your portfolio with high-potential ventures while
+									supporting innovation and economic development in global
+									communities.
 								</p>
 							</div>
 						</div>
@@ -90,7 +91,7 @@
 										Growth, Innovation, and Success
 									</h6>
 									<h1 class="title" data-animation="fadeInUp" data-delay=".5s">
-										transforming <span>business growth</span> Drive Success
+										Invest with Impact.<span>Multiply with</span> Purpose.
 									</h1>
 									<a
 										class="btn-one"
@@ -103,8 +104,8 @@
 							</div>
 							<div class="col-lg-4">
 								<p class="text" data-animation="fadeInUp" data-delay=".9s">
-									Take your brand to new heights Agency offering everything from
-									strategy business.
+									Go beyond traditional assets. Access a curated pipeline of
+									high-potential, global ventures.
 								</p>
 							</div>
 						</div>
@@ -126,24 +127,25 @@
 										data-animation="fadeInUp"
 										data-delay=".3s"
 									>
-										Growth, Innovation, and Success
+										Invest in business in the diapora
 									</h6>
 									<h1 class="title" data-animation="fadeInUp" data-delay=".5s">
-										transforming <span>business growth</span> Drive Success
+										Diversify your <span>investment portfolio</span> on the go
 									</h1>
 									<a
 										class="btn-one"
 										data-animation="fadeInUp"
 										data-delay=".8s"
-										href="page-contact.html"
-										>free consultation</a
+										href="{% url 'main:businesses' %}"
+										>Get Started</a
 									>
 								</div>
 							</div>
 							<div class="col-lg-4">
 								<p class="text" data-animation="fadeInUp" data-delay=".9s">
-									Take your brand to new heights Agency offering everything from
-									strategy business.
+									Diversify your portfolio with high-potential ventures while
+									supporting innovation and economic development in global
+									communities.
 								</p>
 							</div>
 						</div>
@@ -198,15 +200,17 @@
 								ABOUT US
 							</h6>
 							<h2 class="title wow splt-txt" data-splitting>
-								The Journey Behind Our Business Success
+								The New Frontier of Returns is Rooted in Global Progress
 							</h2>
 							<p
 								class="text wow fadeInUp"
 								data-wow-delay="200ms"
 								data-wow-duration="1500ms"
 							>
-								Consultez is the go-to hub for early adopters and innovation
-								enthusiasts, offering cutting-edge technology
+								The most compelling investment opportunities of our time lie at
+								the intersection of financial performance and tangible human
+								impact. We bridge the gap between forward-thinking capital and
+								the visionary entrepreneurs shaping tomorrow's markets.
 							</p>
 						</div>
 						<div
@@ -230,10 +234,10 @@
 									</svg>
 								</div>
 								<div class="content">
-									<h4 class="title">Creative Solutions</h4>
+									<h4 class="title">Diversification:</h4>
 									<p class="text">
-										In today's competitive business landscape, the need for
-										efficient IT solutions has been more critical.
+										Gain exposure to non-correlated assets in emerging sectors
+										and high-growth regions.
 									</p>
 								</div>
 							</div>
@@ -260,10 +264,10 @@
 									</svg>
 								</div>
 								<div class="content">
-									<h4 class="title">Actionable Solutions</h4>
+									<h4 class="title">Alpha Generation:</h4>
 									<p class="text">
-										Innovation is the key to staying ahead in a changing world.
-										We harness cutting-edge technology
+										Tap into early-stage innovation with the potential for
+										outsized returns.
 									</p>
 								</div>
 							</div>
@@ -282,23 +286,9 @@
 					</div>
 
 					<div class="info mt-50">
-						<a href="page-services.html" class="btn-two">Find Services</a>
-						<div class="user">
-							<div class="image">
-								<img
-									src="{% static 'assets/images/about/about-user.png' %}"
-									alt="Image"
-								/>
-							</div>
-							<div>
-								<img
-									class="sig"
-									src="{% static 'assets/images/about/signature.png' %}"
-									alt="Image"
-								/>
-								<p class="sub-title">Founder</p>
-							</div>
-						</div>
+						<a href="{% url 'main:businesses' %}" class="btn-two"
+							>Find Business</a
+						>
 					</div>
 				</div>
 			</div>
@@ -323,19 +313,19 @@
 				data-wow-delay="00ms"
 				data-wow-duration="1500ms"
 			>
-				Service area
+				How It Works
 			</h6>
 			<div class="flex-content">
 				<h2 class="title wow splt-txt" data-splitting>
-					Empowering Your Brand <br />
-					Innovative Solutions
+					A Disciplined Approach <br />
+					To Impact Investment
 				</h2>
 				<a
 					class="btn-one wow fadeInUp"
 					data-wow-delay="200ms"
 					data-wow-duration="1500ms"
-					href="page-services.html"
-					>All Services</a
+					href="{% url 'main:businesses' %}"
+					>Get Started</a
 				>
 				<figure
 					class="arry wow bounceInRight"
@@ -355,7 +345,7 @@
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
 					<div class="service-block">
-						<a class="arry-btn" href="page-service-details.html"
+						<a class="arry-btn" href="{% url 'main:businesses' %}"
 							><i class="fa-regular fa-arrow-up-right"></i
 						></a>
 						<div class="content-box">
@@ -386,10 +376,11 @@
 							<div class="content">
 								<span class="number">01</span>
 								<h4 class="title">
-									<a href="page-services.html">Market research</a>
+									<a href="{% url 'main:businesses' %}">Source & Vet</a>
 								</h4>
 								<p class="text">
-									Sed ut perspiciatis unde is voluptatem accusant
+									Identify exceptional entrepreneurs building scalable solutions
+									to global challenges.
 								</p>
 							</div>
 						</div>
@@ -453,10 +444,11 @@
 							<div class="content">
 								<span class="number">02</span>
 								<h4 class="title">
-									<a href="page-services.html">Financial Consulting</a>
+									<a href="{% url 'main:businesses' %}">Invest & Support</a>
 								</h4>
 								<p class="text">
-									Sed ut perspiciatis unde is voluptatem accusant
+									You invest directly in the ventures that align with your
+									goals.
 								</p>
 							</div>
 						</div>
@@ -500,10 +492,10 @@
 							<div class="content">
 								<span class="number">03</span>
 								<h4 class="title">
-									<a href="page-services.html">Branding Consulting</a>
+									<a href="{% url 'main:businesses' %}">Grow & Measure</a>
 								</h4>
 								<p class="text">
-									Sed ut perspiciatis unde is voluptatem accusant
+									Track both your financial returns and your tangible impact
 								</p>
 							</div>
 						</div>
@@ -703,7 +695,7 @@
 							Mission & Vision
 						</h6>
 						<h2 class="title wow splt-txt" data-splitting>
-							we handle complexities, so you can drive growth and success.
+							We Are Catalysts for Global Progress.
 						</h2>
 					</div>
 
@@ -763,11 +755,11 @@
 						>
 							<div class="content-box">
 								<p class="text">
-									At veroeos accusamus dignissimos ducimus blanditiis volupta
-									delenite atque corrupti quos dolores et quas molestias
-									excepturi sint occaecatie
+									We connect the analytical rigor of institutional-grade
+									investing with the transformative potential of visionary
+									entrepreneurs in high-growth markets around the world.
 								</p>
-								<div class="list mt-30 mb-50">
+								<!-- <div class="list mt-30 mb-50">
 									<ul>
 										<li>
 											<i class="fa-solid fa-check"></i> Optimized Sprint
@@ -787,8 +779,10 @@
 											<i class="fa-solid fa-check"></i> Delivering Innovative
 										</li>
 									</ul>
-								</div>
-								<a href="page-about.html" class="btn-two">Discover More</a>
+								</div> -->
+								<a href="{% url 'main:businesses' %}" class="btn-two"
+									>Discover More</a
+								>
 							</div>
 						</div>
 
@@ -800,32 +794,34 @@
 						>
 							<div class="content-box">
 								<p class="text">
-									At veroeos accusamus dignissimos ducimus blanditiis volupta
-									delenite atque corrupti quos dolores et quas molestias
-									excepturi sint occaecatie
+									To unlock human and financial potential by channeling capital
+									to the world's most innovative and impactful ventures.
 								</p>
 								<div class="list mt-30 mb-50">
 									<ul>
 										<li>
-											<i class="fa-solid fa-check"></i> Optimized Sprint
-											Planning
+											<i class="fa-solid fa-check"></i> For Investors: Providing
+											unparalleled access to diversified, high-potential
+											investment opportunities in emerging sectors and
+											communities.
 										</li>
 										<li>
-											<i class="fa-solid fa-check"></i> Continuous Improvement
-										</li>
-									</ul>
-
-									<ul>
-										<li>
-											<i class="fa-solid fa-check"></i> Incremental Delivery
-											Approach
+											<i class="fa-solid fa-check"></i> For Entrepreneurs: Being
+											more than a source of funds; being a strategic partner
+											that provides the capital, network, and guidance they need
+											to scale.
 										</li>
 										<li>
-											<i class="fa-solid fa-check"></i> Delivering Innovative
+											<i class="fa-solid fa-check"></i> For Communities:
+											Actively investing in businesses that solve real problems,
+											create dignified jobs, and foster inclusive economic
+											development.
 										</li>
 									</ul>
 								</div>
-								<a href="page-about.html" class="btn-two">Discover More</a>
+								<a href="{% url 'main:businesses' %}" class="btn-two"
+									>Discover More</a
+								>
 							</div>
 						</div>
 
@@ -837,32 +833,31 @@
 						>
 							<div class="content-box">
 								<p class="text">
-									At veroeos accusamus dignissimos ducimus blanditiis volupta
-									delenite atque corrupti quos dolores et quas molestias
-									excepturi sint occaecatie
+									A world where capital is a force for universal prosperity, and
+									every investment creates a lasting, positive legacy.
+									<br /><br />
+									Our vision is our long-term compass. We envision a future
+									where:
 								</p>
 								<div class="list mt-30 mb-50">
 									<ul>
 										<li>
-											<i class="fa-solid fa-check"></i> Optimized Sprint
-											Planning
+											<i class="fa-solid fa-check"></i> The dichotomy between
+											"profit" and "purpose" is obsolete.
 										</li>
 										<li>
-											<i class="fa-solid fa-check"></i> Continuous Improvement
-										</li>
-									</ul>
-
-									<ul>
-										<li>
-											<i class="fa-solid fa-check"></i> Incremental Delivery
-											Approach
+											<i class="fa-solid fa-check"></i> Global investment
+											portfolios are as diverse and dynamic as the world itself.
 										</li>
 										<li>
-											<i class="fa-solid fa-check"></i> Delivering Innovative
+											<i class="fa-solid fa-check"></i> Economic growth is
+											synonymous with social equity and environmental health.
 										</li>
 									</ul>
 								</div>
-								<a href="page-about.html" class="btn-two">Discover More</a>
+								<a href="{% url 'main:businesses' %}" class="btn-two"
+									>Discover More</a
+								>
 							</div>
 						</div>
 					</div>
@@ -944,148 +939,6 @@
 </section>
 <!-- Choose area end here -->
 
-<!-- Growth area start here -->
-<section
-	class="growth-section pt-120 pb-120"
-	data-background="images/bg/growth-bg.jpg"
->
-	<div class="sec-shape">
-		<img
-			class="sway_Y__animation"
-			src="{% static 'assets/images/shape/growth-shape.png' %}"
-			alt="Image"
-		/>
-	</div>
-	<div class="container">
-		<div class="sec-title pb-50 mb-50">
-			<h6
-				class="sub-title wow fadeInUp"
-				data-wow-delay="00ms"
-				data-wow-duration="1500ms"
-			>
-				Growth Rate
-			</h6>
-			<div class="flex-content">
-				<h2 class="title text-white wow splt-txt" data-splitting>
-					Building Connections for grow <br />
-					Limitless Opportunities.
-				</h2>
-				<a
-					class="btn-one-light border-0 rounded-0 wow fadeInUp"
-					data-wow-delay="200ms"
-					data-wow-duration="1500ms"
-					href="page-about.html"
-					>Discover More</a
-				>
-			</div>
-		</div>
-		<div class="row g-5">
-			<div
-				class="col-md-6 col-xl-4 wow fadeInLeft"
-				data-wow-delay="00ms"
-				data-wow-duration="1500ms"
-			>
-				<div class="growth-block">
-					<!-- pie-graph -->
-					<div class="pie-graph">
-						<div class="graph-outer">
-							<input
-								type="text"
-								class="dial"
-								data-fgColor="#C6D936"
-								data-bgColor="#fff"
-								data-width="120"
-								data-height="120"
-								data-linecap="normal"
-								value="90"
-							/>
-							<div class="inner-text count-box">
-								<span class="count-text" data-stop="90" data-speed="2000"></span
-								>%
-							</div>
-						</div>
-					</div>
-					<div class="content-box">
-						<h4 class="title">Scalable Solutions</h4>
-						<p class="text">
-							End to end fiber optic cable nnectivity for stable
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div
-				class="col-md-6 col-xl-4 wow fadeInLeft"
-				data-wow-delay="200ms"
-				data-wow-duration="1500ms"
-			>
-				<div class="growth-block">
-					<!-- pie-graph -->
-					<div class="pie-graph">
-						<div class="graph-outer">
-							<input
-								type="text"
-								class="dial"
-								data-fgColor="#C6D936"
-								data-bgColor="#fff"
-								data-width="120"
-								data-height="120"
-								data-linecap="normal"
-								value="95"
-							/>
-							<div class="inner-text count-box">
-								<span class="count-text" data-stop="95" data-speed="2000"></span
-								>%
-							</div>
-						</div>
-					</div>
-					<div class="content-box">
-						<h4 class="title">Automation Features</h4>
-						<p class="text">
-							End to end fiber optic cable nnectivity for stable
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div
-				class="col-md-6 col-xl-4 wow fadeInLeft"
-				data-wow-delay="400ms"
-				data-wow-duration="1500ms"
-			>
-				<div class="growth-block">
-					<!-- pie-graph -->
-					<div class="pie-graph">
-						<div class="graph-outer">
-							<input
-								type="text"
-								class="dial"
-								data-fgColor="#C6D936"
-								data-bgColor="#fff"
-								data-width="120"
-								data-height="120"
-								data-linecap="normal"
-								value="75"
-							/>
-							<div class="inner-text count-box">
-								<span class="count-text" data-stop="75" data-speed="2000"></span
-								>%
-							</div>
-						</div>
-					</div>
-					<div class="content-box">
-						<h4 class="title">24/7 Support</h4>
-						<p class="text">
-							End to end fiber optic cable nnectivity for stable
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Growth area end here -->
-
 <!-- Processing area start here -->
 <section class="processing-section pt-120 pb-120">
 	<div class="shape">
@@ -1105,8 +958,8 @@
 				How It Works
 			</h6>
 			<h2 class="title wow splt-txt" data-splitting>
-				Connect, Collaborate, & Create <br />
-				Limitless Opportunities.
+				A Disciplined Approach <br />
+				to Impact Investing
 			</h2>
 		</div>
 
@@ -1120,9 +973,11 @@
 					<div class="processing-block">
 						<div class="inner-box">
 							<h3 class="number">01</h3>
-							<h4 class="title">Strategic Growth</h4>
+							<h4 class="title">Source & Vet</h4>
 							<p class="text">
-								Your Source for Market Trends & Business Intelligence
+								Our global network and expert due diligence team identify
+								exceptional entrepreneurs building scalable solutions to global
+								challenges.
 							</p>
 						</div>
 					</div>
@@ -1135,9 +990,11 @@
 					<div class="processing-block">
 						<div class="inner-box">
 							<h3 class="number">02</h3>
-							<h4 class="title">Fuel Innovation</h4>
+							<h4 class="title">Curate & Present</h4>
 							<p class="text">
-								Sparking Innovation, Shaping Tomorrow successful
+								We structure deals and present a diversified portfolio of vetted
+								opportunities, complete with deep-dive reports and impact
+								metrics.
 							</p>
 						</div>
 					</div>
@@ -1150,9 +1007,11 @@
 					<div class="processing-block">
 						<div class="inner-box">
 							<h3 class="number">03</h3>
-							<h4 class="title">Financial Planning</h4>
+							<h4 class="title">Invest & Support</h4>
 							<p class="text">
-								Helping You Stay on Track with Accurate Estimates
+								You invest directly in the ventures that align with your goals.
+								We actively support our portfolio companies with strategic
+								guidance and network access.
 							</p>
 						</div>
 					</div>
@@ -1165,9 +1024,10 @@
 					<div class="processing-block">
 						<div class="inner-box last-block">
 							<h3 class="number">04</h3>
-							<h4 class="title">Sustainable Success</h4>
+							<h4 class="title">Grow & Measure</h4>
 							<p class="text">
-								Amazing Support! with lot of ele demos to choose from top
+								Track both your financial returns and your tangible impact
+								through detailed quarterly reports on performance and progress.
 							</p>
 						</div>
 					</div>
@@ -1179,8 +1039,8 @@
 			data-wow-delay="200ms"
 			data-wow-duration="1500ms"
 		>
-			Embrace Innovation, Adapt Quickly, and Lead with Confidence.
-			<a href="page-contact.html">Consult Now</a>
+			Discover how to invest with us
+			<a href="{% url 'main:businesses' %}">Invest Now</a>
 		</h5>
 	</div>
 </section>
