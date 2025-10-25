@@ -1,0 +1,316 @@
+{% extends 'main/base.html' %}
+{% load static humanize %}
+{% block content %}
+
+<!-- breadcrumb-area -->
+<section
+    class="breadcrumb-area breadcrumb-bg"
+    data-background="{% static 'assets/images/bg/breadcrumb_bg.jpg' %}"
+>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="breadcrumb-content text-center">
+                    <h2 class="title">{% if form.instance.id %}Edit{% else %}Create{% endif %} Business</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'main:index' %}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'main:dashboard' %}">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                {% if form.instance.id %}Edit{% else %}Create{% endif %} Business
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb-area-end -->
+
+<!-- business-form-area -->
+<section class="inner-donation-area cause-details-area gray-bg pt-130 pb-100">
+    <div class="container">
+        {% if messages %}
+        <div class="alert-messages mb-3">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="inner-donation-wrap">
+                    <div class="donation-form">
+                        
+                            <div class="col-lg-12">
+                                <div class="contact-block">
+                                    <div class="head">
+                                        <h3 class="title">Business Details</h3>
+                                        <p class="sub-title">
+                                            {% if form.instance.id %}
+                                                Update your business information to keep investors informed
+                                            {% else %}
+                                                Fill in your business details to create an attractive listing
+                                            {% endif %}
+                                        </p>
+                                    </div>
+
+                                    <form method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        
+                                        <!-- Basic Information -->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-grp">
+                                                    <label for="title">Business Title</label>
+                                                    {{ form.title }}
+                                                    {% if form.title.errors %}
+                                                    <div class="text-danger small mt-1">{{ form.title.errors }}</div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-grp">
+                                                    <label for="goal">Funding Goal ($)</label>
+                                                    {{ form.goal }}
+                                                    {% if form.goal.errors %}
+                                                    <div class="text-danger small mt-1">{{ form.goal.errors }}</div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Description Fields -->
+                                        <div class="form-grp">
+                                            <label for="description">Description</label>
+                                            {{ form.description }}
+                                            {% if form.description.errors %}
+                                            <div class="text-danger small mt-1">{{ form.description.errors }}</div>
+                                            {% endif %}
+                                        </div>
+
+                                        <div class="form-grp">
+                                            <label for="about">About</label>
+                                            {{ form.about }}
+                                            {% if form.about.errors %}
+                                            <div class="text-danger small mt-1">{{ form.about.errors }}</div>
+                                            {% endif %}
+                                        </div>
+
+                                        <div class="form-grp">
+                                            <label for="summary">Summary</label>
+                                            {{ form.summary }}
+                                            {% if form.summary.errors %}
+                                            <div class="text-danger small mt-1">{{ form.summary.errors }}</div>
+                                            {% endif %}
+                                        </div>
+
+                                        <div class="form-grp">
+                                            <label for="challenge">Challenge</label>
+                                            {{ form.challenge }}
+                                            {% if form.challenge.errors %}
+                                            <div class="text-danger small mt-1">{{ form.challenge.errors }}</div>
+                                            {% endif %}
+                                        </div>
+
+                                        <!-- Additional Details -->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-grp">
+                                                    <label for="project_type">Project Type</label>
+                                                    {{ form.project_type }}
+                                                    {% if form.project_type.errors %}
+                                                    <div class="text-danger small mt-1">{{ form.project_type.errors }}</div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-grp">
+                                                    <label for="location">Location</label>
+                                                    {{ form.location }}
+                                                    {% if form.location.errors %}
+                                                    <div class="text-danger small mt-1">{{ form.location.errors }}</div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-grp">
+                                            <label for="website">Website</label>
+                                            {{ form.website }}
+                                            {% if form.website.errors %}
+                                            <div class="text-danger small mt-1">{{ form.website.errors }}</div>
+                                            {% endif %}
+                                        </div>
+
+                                        <div class="form-grp">
+                                            <label for="more_info">Additional Information</label>
+                                            {{ form.more_info }}
+                                            {% if form.more_info.errors %}
+                                            <div class="text-danger small mt-1">{{ form.more_info.errors }}</div>
+                                            {% endif %}
+                                        </div>
+
+                                        <!-- Targets Section -->
+                                        <div class=" mt-4">
+                                            <h5 class="section-title mb-3">Targets</h5>
+                                            <div class="row">
+                                                {% for field in form %} 
+                                                    {% if 'target_' in field.name %}
+                                                    <div class="col-md-6">
+                                                        <div class="form-grp">
+                                                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                                            {{ field }}
+                                                            {% if field.errors %}
+                                                            <div class="text-danger small mt-1">{{ field.errors }}</div>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                    {% endif %} 
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        <!-- Images Section -->
+                                        <div class=" mt-4">
+                                            <h5 class="section-title mb-3">Images</h5>
+                                            <div class="row">
+                                                {% for field in form %} 
+                                                    {% if 'image_' in field.name %}
+                                                    <div class="col-md-6">
+                                                        <div class="form-grp">
+                                                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                                            {{ field }}
+                                                            {% if field.errors %}
+                                                            <div class="text-danger small mt-1">{{ field.errors }}</div>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                    {% endif %} 
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        <div class="donation-btn text-center mt-30">
+                                            <button type="submit" class="btn">
+                                                <i class="far fa-heart"></i>
+                                                {% if form.instance.id %}Update{% else %}Create{% endif %} Business
+                                            </button>
+                                            <a href="{% url 'main:dashboard' %}" class="btn btn-secondary ms-3">
+                                                Cancel
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- business-form-area-end -->
+
+<style>
+.form-grp {
+    margin-bottom: 20px;
+}
+
+.form-grp label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-grp input,
+.form-grp select,
+.form-grp textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.form-grp input:focus,
+.form-grp select:focus,
+.form-grp textarea:focus {
+    border-color: #1A4137;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(26, 65, 55, 0.1);
+}
+
+.form-grp textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.section-title {
+    color: #1A4137;
+    border-bottom: 2px solid #1A4137;
+    padding-bottom: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    color: white;
+}
+
+.text-danger {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Ensure proper spacing for form sections */
+.targets-section,
+.images-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #f3f4f6;
+}
+
+/* Make sure all form elements are properly styled */
+.contact-block .form-grp {
+    width: 100%;
+}
+
+.contact-block .row {
+    margin-bottom: 0;
+}
+
+.contact-block .row > [class*="col-"] {
+    margin-bottom: 0;
+}
+</style>
+
+<script>
+// Add any necessary JavaScript here
+document.addEventListener('DOMContentLoaded', function() {
+    // You can add form validation or other interactive features here
+    console.log('Business form loaded');
+});
+</script>
+{% endblock %}

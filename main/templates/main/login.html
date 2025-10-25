@@ -1,0 +1,83 @@
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+<!-- main-area -->
+<main>
+	<!-- breadcrumb-area -->
+	<section
+		class="breadcrumb-area breadcrumb-bg"
+		data-background="img/bg/breadcrumb_bg10.jpg"
+	>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+					<div class="breadcrumb-content text-center">
+						<h2 class="title">Login Now</h2>
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Login Now
+								</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- breadcrumb-area-end -->
+
+	<!-- login-area -->
+	<div class="login-area pt-130 pb-100">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xl-6 col-lg-8 col-md-10">
+					<div class="login-form-wrap">
+						 {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show mb-4" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="post">
+                        {% csrf_token %}
+							
+							<div class="form-grp">
+								<input
+									id="email" name="username" type="email" placeholder="Email or Username" required
+								/>
+								<label for="email"><i class="far fa-user"></i></label>
+							</div>
+							<div class="form-grp">
+								<input id="password" name="password" type="password" placeholder="Enter password" />
+								<label for="password"><i class="far fa-key"></i></label>
+							</div>
+							<ul>
+								<li>
+									<button type="submit" class="btn">Login Now</button>
+								</li>
+								<li>
+									<button type="submit" class="forget-btn">
+										Forget Or Sign up
+									</button>
+								</li>
+							</ul>
+							<span class="divider">Or</span>
+							<button class="login-btn">
+								<i class="fab fa-facebook-f"></i>Login With Facebook
+							</button>
+							<button class="login-btn twitter">
+								<i class="fab fa-twitter"></i>Login With Twitter
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- login-area-end -->
+</main>
+<!-- main-area-end -->
+{% endblock %}

@@ -1,487 +1,433 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-	<!-- Mirrored from html.kodesolution.com/2025/consultez-html-v2/index-1-dark.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Sep 2025 23:45:55 GMT -->
+<html class="no-js" lang="">
+	<!-- Mirrored from themeadapt.com/tf/crowdpress-live/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Oct 2025 09:39:26 GMT -->
 	<head>
 		<meta charset="utf-8" />
-		<title>
-			Business Investment - Diversify your portfolio with high-potential
-			ventures while supporting innovation and economic development in global
-			communities.
-		</title>
-		<!-- Stylesheets -->
-		<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
-		<link href="{% static 'assets/css/flatpickr.min.css' %}" rel="stylesheet" />
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="{% static 'assets/css/slick-theme.css' %}"
-		/>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="{% static 'assets/css/slick.css' %}"
-		/>
-		<link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
-		<link href="{% static 'assets/css/style-dark.css' %}" rel="stylesheet" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<title>CrowdPress - Crowdfunding & Charity HTML Template</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+		<!-- Place favicon.ico in the root directory -->
+
+		<!-- CSS here -->
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}" />
 		<link
-			rel="shortcut icon"
-			href="{% static 'assets/images/logo2.png' %}"
-			type="image/x-icon"
+			rel="stylesheet"
+			href="{% static 'assets/css/magnific-popup.css' %}"
 		/>
 		<link
-			rel="icon"
-			href="{% static 'assets/images/logo2.png' %}"
-			type="image/x-icon"
+			rel="stylesheet"
+			href="{% static 'assets/css/fontawesome-all.min.css' %}"
 		/>
-		<!-- Responsive -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="{% static 'assets/css/bootstrap-datepicker.min.css' %}"
+		/>
+		<link rel="stylesheet" href="{% static 'assets/css/jquery-ui.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/odometer.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/slick.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/default.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
 	</head>
-
 	<body>
-		<div class="page-wrapper">
-			<!-- Preloader -->
-			<!-- <div class="preloader"></div> -->
+		<!-- Scroll-top -->
+		<button class="scroll-top scroll-to-target" data-target="html">
+			<i class="fas fa-angle-up"></i>
+		</button>
+		<!-- Scroll-top-end-->
 
-			<!-- Main Header-->
-			<header class="main-header header-style-one">
-				<!-- Header Top -->
-				<div class="header-top">
-					<div class="auto-container">
-						<div class="top-left">
-							<!-- Info List -->
-							<ul class="info-list">
-								<li>
-									<i class="fa-solid fa-envelope"></i>
-									<a href="mailto:info@diasporaglobal.africa"
-										><span
-											class="__cf_email__"
-											data-cfemail="68060d0d0c000d0418280b070518090611460b0705"
-											>info@diasporaglobal.africa</span
-										></a
-									>
-								</li>
-								<li><i class="fa-solid fa-location-dot"></i> United Kingdom</li>
-							</ul>
+		<!-- header-area -->
+		<header class="transparent-header header-style-one">
+			<div class="header-top-wrap">
+				<div class="container custom-container">
+					<div class="row align-items-center">
+						<div class="col-lg-4 col-sm-6 d-none d-sm-block">
+							<div class="header-top-left">
+								<ul>
+									<li><a href="{% url 'main:businesses' %}">Explore</a></li>
+									{% if request.user.is_authenticated and request.user.appuser.user_type == 'business_owner' %}
+									<li><a href="{% url 'main:create_business' %}">Start a project</a></li>
+									{% endif %}
+								</ul>
+							</div>
 						</div>
-						<div class="top-right">
-							<ul class="useful-links">
-								<li><a href="#">About</a></li>
-								<li><a href="#">Faqs</a></li>
-								<li><a href="#">Contact</a></li>
-							</ul>
-							<ul class="top-social-icon">
-								<li>
-									<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa-brands fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-								</li>
-							</ul>
+						<div class="col-lg-4 d-none d-lg-block">
+							<div class="logo text-center">
+								<a href="index.html"
+									><img src="{% static 'assets/img/logo/w_logo.png' %}" alt=""
+								/></a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-sm-6">
+							<div class="header-top-right">
+								{% if user.is_authenticated %}
+								<div class="login"><a href="{% url 'main:logout' %}">Logout</a></div>
+								{% else %}
+								<div class="login"><a href="{% url 'main:login' %}">Login</a></div>
+								{% endif %}
+								
+							</div>
 						</div>
 					</div>
 				</div>
-				<!-- Header Top -->
-
-				<!-- Main box -->
-				<div class="main-box">
-					<div class="logo-box">
-						<div class="logo">
-							<a href="#"
-								><img
-									src="{% static 'assets/images/logo2.png' %}"
-									alt=""
-									title="Consultez"
-									style="width: 100px"
-							/></a>
-						</div>
-					</div>
-					<!--Nav Box-->
-					<div class="nav-outer">
-						<nav class="nav main-menu">
-							<ul class="navigation">
-								<li class="">
-									<a href="{% url 'main:index' %}">Home</a>
-								</li>
-								<li class="">
-									<a href="{% url 'main:businesses' %}">Businesses</a>
-								</li>
-								<li class="">
-									<a href="#">Services</a>
-								</li>
-
-								<li><a href="#">Contact</a></li>
-							</ul>
-						</nav>
-						<!-- Main Menu End-->
-					</div>
-					<div class="outer-box">
-						<div class="info-box">
-							<div class="call-info">
-								<i class="fa-solid fa-phone ring__animation"></i>
-								<div>
-									<h6 class="title">Phone:</h6>
-									<a href="tel:447855543929">+44 7855 543929</a>
-								</div>
+			</div>
+			<div id="sticky-header" class="main-header menu-area">
+				<div class="container custom-container">
+					<div class="row">
+						<div class="col-12">
+							<div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+							<div class="menu-wrap">
+								<nav class="menu-nav show">
+									<div class="logo d-none">
+										<a href="index.html"
+											><img
+												src="{% static 'assets/img/logo/w_logo.png' %}"
+												alt="Logo"
+										/></a>
+									</div>
+									<div class="navbar-wrap main-menu d-none d-lg-flex">
+										<ul class="navigation">
+											<li class="active ">
+												<a href="{% url 'main:index' %}">Home</a>
+											</li>
+											<li><a href="{% url 'main:businesses' %}">Business</a></li>
+											
+											
+											
+											
+											<li><a href="#">contacts</a></li>
+										</ul>
+									</div>
+								</nav>
 							</div>
-							<a class="btn-two" href="#">Contact Now</a>
-						</div>
-						<div class="mobile-nav-toggler d-block d-lg-none">
-							<i class="icon lnr-icon-bars text-white"></i>
-						</div>
-						<!-- Mobile Nav toggler -->
-					</div>
-				</div>
-				<div class="auto-container">
-					<!-- Mobile Menu  -->
-					<div class="mobile-menu">
-						<div class="menu-backdrop"></div>
-						<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-						<nav class="menu-box">
-							<div class="upper-box">
-								<div class="nav-logo">
-									<a href="index.html"
-										><img
-											style="width: 100px !important"
-											src="{% static 'assets/images/logo2.png' %}"
-											alt=""
-									/></a>
-								</div>
-								<div class="close-btn"><i class="icon fa fa-times"></i></div>
-							</div>
-							<ul class="navigation clearfix d-block d-lg-none">
-								<!--Keep This Empty / Menu will come through Javascript-->
-							</ul>
-							<div class="content-box d-none d-lg-block">
-								<h4 class="title">About Us</h4>
-								<p class="text">
-									Consultez is the go-to hub for early adopters and innovation
-									enthusiasts, offering cutting technology widely.
-								</p>
-							</div>
-							<ul class="contact-list-one">
-								<li>
-									<!-- Contact Info Box -->
-									<div class="contact-info-box">
-										<i class="icon lnr-icon-phone-handset"></i>
-										<span class="title">Call Now</span>
-										<a href="tel:+447855543929">+44 7855 543929</a>
-									</div>
-								</li>
-								<li>
-									<!-- Contact Info Box -->
-									<div class="contact-info-box">
-										<span class="icon lnr-icon-envelope1"></span>
-										<span class="title">Send Email</span>
-										<a
-											href="https://html.kodesolution.com/cdn-cgi/l/email-protection#462e232a360625292b3627283f6825292b"
-											><span
-												class="__cf_email__"
-												data-cfemail="dab2bfb6aa9ab9b5b7aabbb4a3f4b9b5b7"
-												>[email&#160;protected]</span
-											></a
-										>
-									</div>
-								</li>
-								<li>
-									<!-- Contact Info Box -->
-									<div class="contact-info-box">
-										<span class="icon lnr-icon-clock"></span>
-										<span class="title">Send Email</span>
-										Mon - Sat 8:00 - 6:30, Sunday - CLOSED
-									</div>
-								</li>
-							</ul>
-							<ul class="social-links">
-								<li>
-									<a href="#"><i class="fab fa-x-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-facebook-f"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-pinterest"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-instagram"></i></a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-					<!-- End Mobile Menu -->
-					<!-- Header Search -->
-					<div class="search-popup">
-						<span class="search-back-drop"></span>
-						<button class="close-search">
-							<span class="fa fa-times"></span>
-						</button>
-						<div class="search-inner">
-							<form method="post" action="#">
-								<div class="form-group">
-									<input
-										type="search"
-										name="search-field"
-										value=""
-										placeholder="Search..."
-										required=""
-									/>
-									<button type="submit"><i class="fa fa-search"></i></button>
-								</div>
-							</form>
-						</div>
-					</div>
-					<!-- End Header Search -->
+							<!-- Mobile Menu  -->
+							<div class="mobile-menu">
+								<div class="menu-backdrop"></div>
+								<div class="close-btn"><i class="far fa-times"></i></div>
 
-					<!-- Sticky Header  -->
-					<div class="sticky-header">
-						<div class="auto-container">
-							<div class="inner-container">
-								<!--Logo-->
-								<div class="logo">
-									<a href="index.html"
-										><img
-											src="{% static 'assets/images/logo2.png' %}"
-											style="width: 100px !important"
-											alt=""
-									/></a>
-								</div>
-								<!--Right Col-->
-								<div class="nav-outer">
-									<!-- Main Menu -->
-									<nav class="main-menu">
-										<div class="navbar-collapse show collapse clearfix">
-											<ul class="navigation clearfix">
-												<!--Keep This Empty / Menu will come through Javascript-->
-											</ul>
-										</div>
-									</nav>
-									<!-- Main Menu End-->
-									<!--Mobile Navigation Toggler-->
-									<div class="mobile-nav-toggler">
-										<span class="icon lnr-icon-bars text-white"></span>
+								<nav class="menu-box">
+									<div class="nav-logo">
+										<a href="index.html"
+											><img
+												src="{% static 'assets/img/logo/w_logo.png' %}"
+												alt=""
+												title=""
+										/></a>
 									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- End Sticky Menu -->
-				</div>
-			</header>
-			<!--End Main Header -->
-
-			{% block content %} {% endblock %}
-
-			<!-- Footer area start here -->
-			<footer class="main-footer footer-style-one">
-				<div class="outer-box">
-					<div class="footer-left">
-						<div class="logo">
-							<a href="index.html"
-								><img
-									src="{% static 'assets/images/logo2.png' %}"
-									style="width: 100px !important"
-									alt="Logo"
-							/></a>
-						</div>
-						<button class="back-top-btn mobile-nav-toggler">
-							<svg
-								width="19"
-								height="19"
-								viewBox="0 0 19 19"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<circle cx="1.5" cy="1.5" r="1.5" fill="white" />
-								<circle cx="1.5" cy="9.5" r="1.5" fill="white" />
-								<circle cx="1.5" cy="17.5" r="1.5" fill="white" />
-								<circle cx="9.5" cy="1.5" r="1.5" fill="white" />
-								<circle cx="9.5" cy="9.5" r="1.5" fill="white" />
-								<circle cx="9.5" cy="17.5" r="1.5" fill="white" />
-								<circle cx="17.5" cy="1.5" r="1.5" fill="white" />
-								<circle cx="17.5" cy="9.5" r="1.5" fill="white" />
-								<circle cx="17.5" cy="17.5" r="1.5" fill="white" />
-							</svg>
-						</button>
-					</div>
-
-					<div class="row g-0 w-100">
-						<div class="col-xl-8 left-column order-2 order-xl-1">
-							<div class="footer-top">
-								<div class="row g-4">
-									<div class="col-lg-4">
-										<div class="info-item">
-											<ul>
-												<li><i class="fa-sharp fa-solid fa-phone"></i></li>
-												<li>
-													<span>Call Us:</span>
-													<h5 class="title">+44-7855-543929</h5>
-												</li>
-											</ul>
-										</div>
+									<div class="menu-outer">
+										<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 									</div>
-									<div class="col-lg-4">
-										<div class="info-item">
-											<ul>
-												<li><i class="fa-sharp fa-solid fa-envelope"></i></li>
-												<li>
-													<span>Email Us:</span>
-													<h5 class="title">
-														<a
-															href="https://html.kodesolution.com/cdn-cgi/l/email-protection"
-															class="__cf_email__"
-															data-cfemail="0e676068614e666b627e206d6163"
-															>[email&#160;protected]</a
-														>
-													</h5>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<div class="col-lg-4">
-										<div class="info-item">
-											<ul>
-												<li>
-													<i class="fa-sharp fa-solid fa-location-dot"></i>
-												</li>
-												<li>
-													<span>Hours:</span>
-													<h5 class="title">Daily: 8 AM to 5 PM</h5>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="widgets-section">
-								<div class="row g-4">
-									<div class="col-lg-4 footer-column">
-										<div class="footer-widget links-widget">
-											<h4 class="widget-title">Services</h4>
-											<div class="widget-content">
-												<ul class="user-links">
-													<li><a href="#0">Digital Marketing</a></li>
-													<li><a href="#0">Innovation Space</a></li>
-													<li><a href="#0">Competitive Analysis</a></li>
-													<li><a href="#0">Market Research</a></li>
-													<li><a href="#0">HR Management</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-lg-4 footer-column">
-										<div class="footer-widget links-widget">
-											<h4 class="widget-title">Pages</h4>
-											<div class="widget-content">
-												<ul class="user-links">
-													<li><a href="#0">Our Blog</a></li>
-													<li><a href="#0">Success Stories</a></li>
-													<li><a href="#0">Customers Review</a></li>
-													<li><a href="#0">Contact Us</a></li>
-													<li><a href="#0">About Us</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-lg-4 footer-column">
-										<div class="footer-widget links-widget">
-											<h4 class="widget-title">Signup Newsletter</h4>
-											<div class="input-feild">
-												<input type="text" placeholder="Email Address" />
-												<a class="btn-one-rounded" href="#0"
-													>Sign up now <i class="fa-regular fa-angle-right"></i
+									<div class="social-links">
+										<ul class="clearfix">
+											<li>
+												<a href="#"><span class="fab fa-twitter"></span></a>
+											</li>
+											<li>
+												<a href="#"
+													><span class="fab fa-facebook-square"></span
 												></a>
-											</div>
-											<ul class="footer-nav">
-												<li>
-													<a href="#0"
-														><i class="fa-brands fa-facebook-f"></i
-													></a>
-												</li>
-												<li>
-													<a href="#0"><i class="fa-solid fa-x"></i></a>
-												</li>
-												<li>
-													<a href="#0"><i class="fa-brands fa-vimeo-v"></i></a>
-												</li>
-												<li>
-													<a href="#0"
-														><i class="fa-brands fa-pinterest-p"></i
-													></a>
-												</li>
-											</ul>
-										</div>
+											</li>
+											<li>
+												<a href="#"><span class="fab fa-pinterest-p"></span></a>
+											</li>
+											<li>
+												<a href="#"><span class="fab fa-instagram"></span></a>
+											</li>
+											<li>
+												<a href="#"><span class="fab fa-youtube"></span></a>
+											</li>
+										</ul>
+									</div>
+								</nav>
+							</div>
+							<!-- End Mobile Menu -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- header-area-end -->
+
+		{% block content %} {% endblock %}
+
+		<!-- footer-area -->
+		<footer>
+			<div class="footer-area">
+				<div class="footer-top footer-bg">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4 col-md-5">
+								<div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
+									<div class="fw-logo mb-30">
+										<a href="index.html"
+											><img
+												src="{% static 'assets/img/logo/w_logo.png' %}"
+												alt=""
+										/></a>
+									</div>
+									<div class="footer-contact-list mb-30">
+										<ul>
+											<li>
+												<div class="icon">
+													<img
+														src="{% static 'assets/img/icon/f_contact_icon01.png' %}"
+														alt=""
+													/>
+												</div>
+												<div class="content">
+													<span>Phone Number</span>
+													<a href="tel:0123456789">786-098-876-09</a>
+												</div>
+											</li>
+											<li>
+												<div class="icon">
+													<img
+														src="{% static 'assets/img/icon/f_contact_icon02.png' %}"
+														alt=""
+													/>
+												</div>
+												<div class="content">
+													<span>Email Address</span>
+													<a href="mailto:info@webmail.com">info@webmail.com</a>
+												</div>
+											</li>
+											<li>
+												<div class="icon">
+													<img
+														src="{% static 'assets/img/icon/f_contact_icon03.html' %}"
+														alt=""
+													/>
+												</div>
+												<div class="content">
+													<span
+														>14/A, Miranda Halim Tower <br />
+														New York, US</span
+													>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="footer-social">
+										<ul>
+											<li>
+												<a href="#"><i class="fab fa-facebook-f"></i></a>
+											</li>
+											<li>
+												<a href="#"><i class="fab fa-twitter"></i></a>
+											</li>
+											<li>
+												<a href="#"><i class="fab fa-behance"></i></a>
+											</li>
+											<li>
+												<a href="#"><i class="fab fa-youtube"></i></a>
+											</li>
+										</ul>
 									</div>
 								</div>
 							</div>
-
-							<div class="footer-bottom">
-								<p class="copyright-text">
-									© Copyright 2025. All Right by <a href="#0">Diasporaglobal</a>
-								</p>
-							</div>
-						</div>
-						<div class="col-xl-4 right-column order-1 order-xl-2">
-							<div class="inner-column">
-								<h3 class="title">Have a Project in your Mind?</h3>
-								<a class="circle-btn" href="page-contact.html"
-									>Contact Us <i class="fa-regular fa-arrow-up-right"></i
-								></a>
-								<div class="mt-10">
-									<h5 class="time">09 : 00 AM - 10 : 30 PM</h5>
-									<h5 class="date">Saturday - Thursday</h5>
+							<div class="col-lg-4 col-md-7">
+								<div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
+									<h4 class="fw-title">Project<span>.</span></h4>
+									<div class="footer-link">
+										<ul>
+											<li><a href="contact.html">Design & Tech</a></li>
+											<li><a href="contact.html">Comics & Illustration</a></li>
+											<li><a href="contact.html">Food & Craft</a></li>
+											<li><a href="contact.html">Games</a></li>
+											<li><a href="contact.html">Publishing</a></li>
+											<li><a href="contact.html">Music</a></li>
+											<li><a href="contact.html">Film</a></li>
+											<li><a href="contact.html">Product Design</a></li>
+											<li><a href="contact.html">Fashion</a></li>
+											<li><a href="contact.html">Photography</a></li>
+											<li><a href="contact.html">Games</a></li>
+										</ul>
+									</div>
 								</div>
 							</div>
-							<div class="shape">
-								<img
-									src="{% static 'assets/images/shape/footer-one-shape.png' %}"
-									alt="Image"
-								/>
+							<div class="col-lg-4 col-md-6">
+								<div class="footer-widget wow fadeInUp" data-wow-delay=".6s">
+									<h4 class="fw-title">News Feeds<span>.</span></h4>
+									<div class="footer-blog">
+										<ul>
+											<li>
+												<div class="thumb">
+													<a href="blog-details.html"
+														><img
+															src="{% static 'assets/img/images/f_blog_img01.html' %}"
+															alt=""
+													/></a>
+												</div>
+												<div class="content">
+													<span
+														><i class="fas fa-calendar-alt"></i>23rd June
+														2022</span
+													>
+													<h2 class="title">
+														<a href="blog-details.html"
+															>Honest and Clear Presentation in Projects</a
+														>
+													</h2>
+												</div>
+											</li>
+											<li>
+												<div class="thumb">
+													<a href="blog-details.html"
+														><img
+															src="{% static 'assets/img/images/f_blog_img02.html' %}"
+															alt=""
+													/></a>
+												</div>
+												<div class="content">
+													<span
+														><i class="fas fa-calendar-alt"></i>23rd June
+														2022</span
+													>
+													<h2 class="title">
+														<a href="blog-details.html"
+															>Simply popular belief tradition contrary lorem</a
+														>
+													</h2>
+												</div>
+											</li>
+											<li>
+												<div class="thumb">
+													<a href="blog-details.html"
+														><img
+															src="{% static 'assets/img/images/f_blog_img03.html' %}"
+															alt=""
+													/></a>
+												</div>
+												<div class="content">
+													<span
+														><i class="fas fa-calendar-alt"></i>23rd June
+														2022</span
+													>
+													<h2 class="title">
+														<a href="blog-details.html"
+															>Popular contrary to traditional lorem ipsum</a
+														>
+													</h2>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</footer>
-			<!-- Footer area end here -->
-		</div>
-		<!-- End Page Wrapper -->
-		<script
-			data-cfasync="false"
-			src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-		></script>
-		<script src="{% static 'assets/js/jquery.js' %}"></script>
-		<script src="{% static 'assets/js/popper.min.js' %}"></script>
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-lg-6 col-md-6">
+								<div class="copyright-text">
+									<p>2022© Copyright, CrowdPress. All rights reserved.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6">
+								<div class="footer-bottom-right">
+									<ul>
+										<li>
+											<a href="contact.html">Privacy Environmental Policy</a>
+										</li>
+										<li><a href="contact.html">Terms of Use</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer-area-end -->
+
+		<!-- JS here -->
+		<script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
 		<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'assets/js/bootstrap-datepicker.min.js' %}"></script>
+		<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+		<script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.odometer.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.easypiechart.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.inview.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.appear.js' %}"></script>
 		<script src="{% static 'assets/js/slick.min.js' %}"></script>
-		<script src="{% static 'assets/js/slick-animation.min.js' %}"></script>
-		<script src="{% static 'assets/js/jquery.fancybox.js' %}"></script>
-		<script src="{% static 'assets/js/wow.js' %}"></script>
-		<script src="{% static 'assets/js/appear.js' %}"></script>
-		<script src="{% static 'assets/js/mixitup.js' %}"></script>
-		<script src="{% static 'assets/js/flatpickr.js' %}"></script>
-		<script src="{% static 'assets/js/swiper.min.js' %}"></script>
-		<script src="{% static 'assets/js/gsap.min.js' %}"></script>
-		<script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
-		<script src="{% static 'assets/js/SplitText.min.js' %}"></script>
-		<script src="{% static 'assets/js/nice-select.min.js' %}"></script>
-		<script src="{% static 'assets/js/knob.js' %}"></script>
-		<script src="{% static 'assets/js/parallax.js' %}"></script>
-		<script src="{% static 'assets/js/vanilla-tilt.js' %}"></script>
-		<script src="{% static 'assets/js/splitting.js' %}"></script>
-		<script src="{% static 'assets/js/splitType.js' %}"></script>
-		<script src="{% static 'assets/js/script-gsap.js' %}"></script>
-		<script src="{% static 'assets/js/script.js' %}"></script>
+		<script src="{% static 'assets/js/wow.min.js' %}"></script>
+		<script src="{% static 'assets/js/main.js' %}"></script>
+		<script>
+			(function () {
+				function setBg() {
+					if (!window.jQuery) return;
+					var $ = window.jQuery;
+					$("[data-background]").each(function () {
+						var bg = $(this).attr("data-background");
+						if (bg) $(this).css("background-image", "url(" + bg + ")");
+					});
+				}
+				function ensureSlick(cb) {
+					var $ = window.jQuery;
+					if ($ && $.fn && $.fn.slick) return cb();
+					var s = document.createElement("script");
+					s.src =
+						"https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js";
+					s.onload = cb;
+					document.head.appendChild(s);
+				}
+				function ensureJQ(cb) {
+					if (window.jQuery) return cb();
+					var s = document.createElement("script");
+					s.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+					s.onload = cb;
+					document.head.appendChild(s);
+				}
+				function initSlider() {
+					var $ = window.jQuery;
+					if (!$) return;
+					setBg();
+					var $wrap = $(".slider-active");
+					if ($wrap.length && !$wrap.hasClass("slick-initialized")) {
+						$wrap.slick({
+							slidesToShow: 1,
+							slidesToScroll: 1,
+							arrows: true,
+							dots: false,
+							autoplay: true,
+							autoplaySpeed: 5000,
+							fade: true,
+							cssEase: "linear",
+							prevArrow:
+								'<button type="button" class="slick-prev"><i class="fas fa-angle-left"></i></button>',
+							nextArrow:
+								'<button type="button" class="slick-next"><i class="fas fa-angle-right"></i></button>',
+						});
+					}
+				}
+				function start() {
+					ensureJQ(function () {
+						ensureSlick(initSlider);
+					});
+				}
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", start);
+				} else {
+					start();
+				}
+			})();
+		</script>
 	</body>
 
-	<!-- Mirrored from html.kodesolution.com/2025/consultez-html-v2/index-1-dark.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Sep 2025 23:45:58 GMT -->
+	<!-- Mirrored from themeadapt.com/tf/crowdpress-live/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Oct 2025 09:41:03 GMT -->
 </html>

@@ -1,677 +1,149 @@
-{% load static %}
+{% extends 'main/base.html' %} {% load static humanize %} {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-	<!-- Mirrored from html.kodesolution.com/2025/consultez-html-v2/page-case-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Sep 2025 23:46:35 GMT -->
-	<head>
-		<meta charset="utf-8" />
-		<title>Consultez - Business Consulting HTML Template</title>
-		<!-- Stylesheets -->
-		<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
-		<link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
-
-		<link
-			rel="shortcut icon"
-			href="{% static 'assets/images/logo2.png' %}"
-			type="image/x-icon"
-		/>
-		<link
-			rel="icon"
-			href="{% static 'assets/images/logo2.png' %}"
-			type="image/x-icon"
-		/>
-
-		<!-- Responsive -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-		/>
-		<!--[if lt IE 9
-			]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
-		><![endif]-->
-		<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-	</head>
-
-	<body>
-		<div class="page-wrapper">
-			<!-- Preloader -->
-			<div class="preloader"></div>
-
-			<!-- Main Header-->
-			<header class="main-header header-style-one">
-				<!-- Header Top -->
-				<div class="header-top">
-					<div class="auto-container">
-						<div class="top-left">
-							<!-- Info List -->
-							<ul class="info-list">
-								<li>
-									<i class="fa-solid fa-envelope"></i>
-									<a href="mailto:info@diasporaglobal.africa"><span>info@diasporaglobal.africa</span></a>
+<!-- main-area -->
+<main>
+	<!-- breadcrumb-area -->
+	<section
+		class="breadcrumb-area breadcrumb-bg"
+		data-background="{{ donation.image_one.url }}"
+	>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+					<div class="breadcrumb-content text-center">
+						<h2 class="title">Charity Causes Details</h2>
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Cause Details
 								</li>
-								<li>
-									<i class="fa-solid fa-location-dot"></i> United Kingdom
-								</li>
-							</ul>
-						</div>
-
-						<div class="top-right">
-							<ul class="useful-links">
-								<li><a href="#">About</a></li>
-								<li><a href="#">Faqs</a></li>
-								<li><a href="#">Contact</a></li>
-							</ul>
-							<ul class="top-social-icon">
-								<li>
-									<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa-brands fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- Header Top -->
-
-				<!-- Main box -->
-				<div class="main-box">
-					<div class="logo-box">
-						<div class="logo">
-							<a href="{% url 'main:index' %}"
-								><img
-									src="{% static 'assets/images/logo2.png' %}"
-									alt=""
-									title="Consultez"
-                  style="width: 100px"
-							/></a>
-						</div>
-					</div>
-					<!--Nav Box-->
-					<div class="nav-outer">
-						<nav class="nav main-menu">
-							<ul class="navigation">
-								<li class="">
-									<a href="{% url 'main:index' %}">Home</a>
-									
-										
-								</li>
-								<li class="">
-									<a href="{% url 'main:businesses' %}">Businesses</a>
-									
-								</li>
-								<li class="dropdown">
-									<a href="#">Services</a>
-									
-								</li>
-								
-								
-								<li><a href="page-contact.html">Contact</a></li>
-							</ul>
-						</nav>
-						<!-- Main Menu End-->
-					</div>
-					<div class="outer-box">
-						<div class="info-box">
-							<div class="call-info">
-								<i class="fa-solid fa-phone ring__animation"></i>
-								<div>
-									<h6 class="title">Phone:</h6>
-									<a href="tel:00222222200">+00 2222 222 00</a>
-								</div>
-							</div>
-							<a class="btn-two" href="#">Contact Now</a>
-						</div>
-						<div class="mobile-nav-toggler d-block d-lg-none">
-							<i class="icon lnr-icon-bars"></i>
-						</div>
-						<!-- Mobile Nav toggler -->
-					</div>
-				</div>
-				<div class="auto-container">
-					<!-- Mobile Menu  -->
-					<div class="mobile-menu">
-						<div class="menu-backdrop"></div>
-						<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-						<nav class="menu-box">
-							<div class="upper-box">
-								<div class="nav-logo">
-									<a href="{% url 'main:index' %}"
-										><img
-											src="{% static 'assets/images/logo2.png' %}"
-											alt=""
-											style="width: 100px"
-										/></a>
-								</div>
-								<div class="close-btn"><i class="icon fa fa-times"></i></div>
-							</div>
-							<ul class="navigation clearfix d-block d-lg-none">
-								<!--Keep This Empty / Menu will come through Javascript-->
-							</ul>
-							<div class="content-box d-none d-lg-block">
-								<h4 class="title">About Us</h4>
-								<p class="text">
-									Consultez is the go-to hub for early adopters and innovation
-									enthusiasts, offering cutting technology widely.
-								</p>
-							</div>
-							<ul class="contact-list-one">
-								<li>
-									<!-- Contact Info Box -->
-									<div class="contact-info-box">
-										<i class="icon lnr-icon-phone-handset"></i>
-										<span class="title">Call Now</span>
-										<a href="tel:+92880098670">+92 (8800) - 98670</a>
-									</div>
-								</li>
-								<li>
-									<!-- Contact Info Box -->
-									<div class="contact-info-box">
-										<span class="icon lnr-icon-envelope1"></span>
-										<span class="title">Send Email</span>
-										<a
-											href="https://html.kodesolution.com/cdn-cgi/l/email-protection#c1a9a4adb181a2aeacb1a0afb8efa2aeac"
-											><span
-												class="__cf_email__"
-												data-cfemail="cda5a8a1bd8daea2a0bdaca3b4e3aea2a0"
-												>[email&#160;protected]</span
-											></a
-										>
-									</div>
-								</li>
-								<li>
-									<!-- Contact Info Box -->
-									<div class="contact-info-box">
-										<span class="icon lnr-icon-clock"></span>
-										<span class="title">Send Email</span>
-										Mon - Sat 8:00 - 6:30, Sunday - CLOSED
-									</div>
-								</li>
-							</ul>
-							<ul class="social-links">
-								<li>
-									<a href="#"><i class="fab fa-x-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-facebook-f"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-pinterest"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fab fa-instagram"></i></a>
-								</li>
-							</ul>
+							</ol>
 						</nav>
 					</div>
-					<!-- End Mobile Menu -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- breadcrumb-area-end -->
 
-					<!-- Header Search -->
-					<div class="search-popup">
-						<span class="search-back-drop"></span>
-						<button class="close-search">
-							<span class="fa fa-times"></span>
-						</button>
-						<div class="search-inner">
-							<form
-								method="post"
-								action="https://html.kodesolution.com/2025/consultez-html-v2/index.html"
-							>
-								<div class="form-group">
+	<!-- donation-area -->
+	<section class="inner-donation-area cause-details-area gray-bg pt-130 pb-100">
+		<div class="container">
+			{% if messages %}
+			<div class="alert-messages mb-3">
+				{% for message in messages %}
+				<div class="alert alert-{{ message.tags }}" role="alert">{{ message }}</div>
+				{% endfor %}
+			</div>
+			{% endif %}
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="inner-donation-wrap">
+						<div class="donation-form">
+							<form action="" method="POST">
+								{% csrf_token %}
+								<div class="form-grp">
+									<label for="name">Your Name</label>
+									<div class="row">
+										<div class="col-md-6">
+											<input
+												id="name"
+												type="text"
+												name="name"
+												placeholder="First name"
+											/>
+										</div>
+										<div class="col-md-6">
+											<input
+												type="text"
+												placeholder="Last Name"
+												name="lastname"
+												id="lastname"
+											/>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-grp">
+									<label for="email">Your Email</label>
 									<input
-										type="search"
-										name="search-field"
-										value=""
-										placeholder="Search..."
-										required=""
+										type="email"
+										placeholder="Email Address"
+										name="email"
+										id="email"
 									/>
-									<button type="submit"><i class="fa fa-search"></i></button>
+								</div>
+
+								<div class="form-grp">
+									<label for="number"><i class="fal fa-lock"></i>Amount</label>
+									<input
+										type="number"
+										placeholder="Amount"
+										id="amount"
+										name="amount"
+									/>
+								</div>
+								<!-- <div class="row">
+									<div class="col-md-6">
+										<div class="form-grp">
+											<label for="dateone">Expiration Month</label>
+											<input
+												id="dateone"
+												type="text"
+												class="date"
+												placeholder="Select Date"
+											/>
+										</div>
+									</div>
+								</div> -->
+
+								<div class="donation-btn text-center mt-30">
+									<button type="submit" class="btn">
+										<i class="far fa-heart"></i>Make Donation
+									</button>
 								</div>
 							</form>
 						</div>
 					</div>
-					<!-- End Header Search -->
-
-					<!-- Sticky Header  -->
-					<div class="sticky-header">
-						<div class="auto-container">
-							<div class="inner-container">
-								<!--Logo-->
-								<div class="logo">
-									<a href="{% url 'main:index' %}"
-										><img src="{% static 'assets/images/logo2.png' %}" alt=""
-											style="width: 50px"
-										/></a>
+				</div>
+				<div class="col-lg-4 col-md-8 col-sm-10">
+					<aside class="donation-sidebar">
+						<div class="donation-widget">
+							<span>Key Details</span>
+							<h2 class="funding-title">{{ donation.title }}</h2>
+							<img
+								src="{{ donation.image_one.url }}"
+								alt=""
+								width="100%"
+								height="200"
+								style="object-fit: cover"
+							/>
+							<div class="cause-amounts text-center">
+								<h2 class="title">
+									${{ donation.amount_donated|floatformat:0|intcomma }}
+									<span>of ${{ donation.goal|floatformat:0|intcomma }}</span>
+								</h2>
+								<div class="progress">
+									<div
+										class="progress-bar"
+										role="progressbar"
+										style="width:{{ donation.percentage_raised|floatformat:0 }}%"
+										aria-valuenow="{{ donation.percentage_raised|floatformat:0 }}"
+										aria-valuemin="0"
+										aria-valuemax="100"
+									></div>
 								</div>
-								<!--Right Col-->
-								<div class="nav-outer">
-									<!-- Main Menu -->
-									<nav class="main-menu">
-										<div class="navbar-collapse show collapse clearfix">
-											<ul class="navigation clearfix">
-												<!--Keep This Empty / Menu will come through Javascript-->
-											</ul>
-										</div>
-									</nav>
-									<!-- Main Menu End-->
-									<!--Mobile Navigation Toggler-->
-									<div class="mobile-nav-toggler">
-										<span class="icon lnr-icon-bars"></span>
-									</div>
-								</div>
+								<p>Raised by {{ donation.donators_count }} people</p>
 							</div>
 						</div>
-					</div>
-					<!-- End Sticky Menu -->
+					</aside>
 				</div>
-			</header>
-			<!--End Main Header -->
-
-	<!-- Start main-content -->
-	<section class="page-title" style="background-image: url({% static 'assets/images/background/page-title-bg.jpg' %});">
-		<div class="auto-container">
-			<div class="title-outer">
-				<h1 class="title">Project Details</h1>
-				<ul class="page-breadcrumb">
-					<li><a href="index.html">Home</a></li>
-					<li>Project Details</li>
-				</ul>
 			</div>
 		</div>
 	</section>
-	<!-- End main-content -->
+	<!-- donation-area-end -->
+</main>
+<!-- main-area-end -->
 
-
-<!-- Contact area start here -->
-<section class="contact-section pt-120 pb-120">
-	<div class="shape">
-	  <img src="{% static 'assets/images/shape/contact-shape.png' %}" alt="Image">
-	</div>
-	<div class="contact-image">
-	  <img class="wow bounceInRight" data-wow-delay="200ms" data-wow-duration="1500ms"
-		src="{% static 'assets/images/contact/contact-image.png' %}" alt="Image">
-	</div>
-	<div class="container">
-	  <div class="outer-box">
-		<div class="row g-5">
-		  <div class="col-lg-5 content-column">
-			<div class="inner-column">
-			  <div class="sec-title mb-30">
-				<h6 class="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Invest Now</h6>
-				<h2 class="title wow splt-txt" data-splitting>let's work together</h2>
-				<div class="widget-donation-card">
-					
-					<div class="progress mt-30">
-						<div class="progress-single">
-							
-							<div class="bar">
-								<div
-									class="bar-inner count-bar"
-									data-percent=" {{ donation.percentage_raised|floatformat:0 }}%"
-								>
-									<div class="count-text">
-										{{ donation.percentage_raised|floatformat:0 }}%
-									</div>
-								</div>
-							</div>
-							<div
-								style="
-									
-									display: flex;
-									justify-content: space-between;
-									font-size: 14px;
-								"
-							>
-								<span class="donation-card_raise">
-									Raised
-									<span class="donation-card_raise-number"
-										>₦{{ donation.amount_donated|floatformat:2 }}</span
-									>
-								</span>
-								<span class="donation-card_goal">
-									Goal
-									<span class="donation-card_goal-number"
-										>₦{{ donation.goal|floatformat:2 }}</span
-									>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<p class="text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">We condemn with rightful anger and, like those who have been misled and corrupted by allurements.</p>
-			  </div>
-			  <ul class="info wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
-				<li class="icon">
-				  <svg width="36" height="32" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-					  d="M20.1094 8.61719C20.6919 8.61719 21.1641 8.14499 21.1641 7.5625C21.1641 6.98001 20.6919 6.50781 20.1094 6.50781C19.5269 6.50781 19.0547 6.98001 19.0547 7.5625C19.0547 8.14499 19.5269 8.61719 20.1094 8.61719Z"
-					  fill="#1A4137" />
-					<path
-					  d="M24.3281 8.61719C24.9106 8.61719 25.3828 8.14499 25.3828 7.5625C25.3828 6.98001 24.9106 6.50781 24.3281 6.50781C23.7456 6.50781 23.2734 6.98001 23.2734 7.5625C23.2734 8.14499 23.7456 8.61719 24.3281 8.61719Z"
-					  fill="#1A4137" />
-					<path
-					  d="M28.5469 8.61719C29.1294 8.61719 29.6016 8.14499 29.6016 7.5625C29.6016 6.98001 29.1294 6.50781 28.5469 6.50781C27.9644 6.50781 27.4922 6.98001 27.4922 7.5625C27.4922 8.14499 27.9644 8.61719 28.5469 8.61719Z"
-					  fill="#1A4137" />
-					<path
-					  d="M23.7103 31.8203C25.4467 31.8203 26.8594 30.4009 26.8594 28.6562V24.4375C26.8594 23.9838 26.5692 23.581 26.139 23.4372L19.8258 21.3278C19.5167 21.2246 19.1776 21.2699 18.9065 21.4506L16.2218 23.2404C13.3405 21.8732 9.93509 18.4979 8.58059 15.6678L10.3698 12.9841C10.5504 12.7131 10.5957 12.3738 10.4925 12.0648L8.38315 5.75167C8.23936 5.32136 7.83654 5.03125 7.38281 5.03125H3.16406C1.4194 5.03125 0 6.4439 0 8.18034C0 14.0076 2.64966 19.9883 7.26961 24.589C11.8845 29.1846 17.877 31.8203 23.7103 31.8203ZM3.16406 7.14062H6.62323L8.3283 12.2436L6.50531 14.9781C6.31266 15.2671 6.27462 15.6323 6.40364 15.9548C7.10501 17.7082 8.50859 19.6802 10.3558 21.5077C12.1908 23.3231 14.1725 24.7114 15.9358 25.4167C16.2582 25.5456 16.6236 25.5076 16.9125 25.315L19.6471 23.492L24.75 25.1971V28.6562C24.75 29.2476 24.2933 29.7109 23.7103 29.7109C12.607 29.7109 2.10938 19.2475 2.10938 8.18034C2.10938 7.5973 2.57266 7.14062 3.16406 7.14062Z"
-					  fill="#1A4137" />
-					<path
-					  d="M19.7058 19.0838C20.0998 19.247 20.5535 19.1568 20.8552 18.8552L24.765 14.9453H28.5469C32.6565 14.9453 36 11.6334 36 7.5625C36 3.49162 32.6565 0.179688 28.5469 0.179688H20.1094C16.0385 0.179688 12.7266 3.49162 12.7266 7.5625C12.7266 11.2754 15.4816 14.3569 19.0547 14.8702V18.1094C19.0547 18.536 19.3117 18.9205 19.7058 19.0838ZM14.8359 7.5625C14.8359 4.65473 17.2016 2.28906 20.1094 2.28906H28.5469C31.4934 2.28906 33.8906 4.65473 33.8906 7.5625C33.8906 10.4703 31.4934 12.8359 28.5469 12.8359H24.3281C24.0484 12.8359 23.7801 12.947 23.5824 13.1448L21.1641 15.5632V13.8906C21.1641 13.3082 20.6918 12.8359 20.1094 12.8359C17.2016 12.8359 14.8359 10.4703 14.8359 7.5625Z"
-					  fill="#1A4137" />
-				  </svg>
-				</li>
-				<li>
-				  <p class="sub-title">Call For Inquiry</p>
-				  <h4 class="title">+00 (002) 896 22</h4>
-				</li>
-			  </ul>
-			  <ul class="info mt-30 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-				<li class="icon">
-				  <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-					  d="M29 0C30.625 0 32 1.375 32 3V21C32 22.6875 30.625 24 29 24H3C1.3125 24 0 22.6875 0 21V3C0 1.375 1.3125 0 3 0H29ZM29 3H3V5.5625C4.375 6.75 6.625 8.5 11.375 12.25C12.4375 13.0625 14.5 15.0625 16 15C17.4375 15.0625 19.5 13.0625 20.5625 12.25C25.3125 8.5 27.5625 6.75 29 5.5625V3ZM3 21H29V9.4375C27.5625 10.5625 25.5 12.1875 22.4375 14.625C21 15.6875 18.625 18.0625 16 18C13.3125 18.0625 10.875 15.6875 9.5 14.625C6.4375 12.1875 4.375 10.5625 3 9.4375V21Z"
-					  fill="#1A4137" />
-				  </svg>
-				</li>
-				<li>
-				  <p class="sub-title">Send Us Email</p>
-				  <h4 class="title"><a href="https://html.kodesolution.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="80f4e8e5ede5c0e7ede1e9ecaee3efed">[email&#160;protected]</a></h4>
-				</li>
-			  </ul>
-			</div>
-		  </div>
-		  <div class="col-lg-7">
-			<div class="contact-block">
-
-			  <div class="head">
-				<h3 class="title">Need Help For Project!</h3>
-				<p class="sub-title">let's collaborate and create something amazing together!</p>
-			  </div>
-
-			  <form action="" method="POST" >
-				{% csrf_token %}
-				<div class="row g-4">
-				  <div class="col-sm-6">
-					<div class="input">
-					  <svg class="icon" width="14" height="16" viewBox="0 0 14 16" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-						  d="M9.78125 9.5C12.0938 9.5 14 11.4062 14 13.7188V14.5C14 15.3438 13.3125 16 12.5 16H1.5C0.65625 16 0 15.3438 0 14.5V13.7188C0 11.4062 1.875 9.5 4.1875 9.5C5.09375 9.5 5.5 10 7 10C8.46875 10 8.875 9.5 9.78125 9.5ZM12.5 14.5V13.7188C12.5 12.2188 11.2812 11 9.78125 11C9.3125 11 8.59375 11.5 7 11.5C5.375 11.5 4.65625 11 4.1875 11C2.6875 11 1.5 12.2188 1.5 13.7188V14.5H12.5ZM7 9C4.5 9 2.5 7 2.5 4.5C2.5 2.03125 4.5 0 7 0C9.46875 0 11.5 2.03125 11.5 4.5C11.5 7 9.46875 9 7 9ZM7 1.5C5.34375 1.5 4 2.875 4 4.5C4 6.15625 5.34375 7.5 7 7.5C8.625 7.5 10 6.15625 10 4.5C10 2.875 8.625 1.5 7 1.5Z"
-						  fill="#696969" />
-					  </svg>
-					  <input type="text" placeholder="First Name" name="name"
-					  id="name">
-					</div>
-				  </div>
-				  <div class="col-sm-6">
-					<div class="input">
-					  <svg class="icon" width="14" height="16" viewBox="0 0 14 16" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-						  d="M9.78125 9.5C12.0938 9.5 14 11.4062 14 13.7188V14.5C14 15.3438 13.3125 16 12.5 16H1.5C0.65625 16 0 15.3438 0 14.5V13.7188C0 11.4062 1.875 9.5 4.1875 9.5C5.09375 9.5 5.5 10 7 10C8.46875 10 8.875 9.5 9.78125 9.5ZM12.5 14.5V13.7188C12.5 12.2188 11.2812 11 9.78125 11C9.3125 11 8.59375 11.5 7 11.5C5.375 11.5 4.65625 11 4.1875 11C2.6875 11 1.5 12.2188 1.5 13.7188V14.5H12.5ZM7 9C4.5 9 2.5 7 2.5 4.5C2.5 2.03125 4.5 0 7 0C9.46875 0 11.5 2.03125 11.5 4.5C11.5 7 9.46875 9 7 9ZM7 1.5C5.34375 1.5 4 2.875 4 4.5C4 6.15625 5.34375 7.5 7 7.5C8.625 7.5 10 6.15625 10 4.5C10 2.875 8.625 1.5 7 1.5Z"
-						  fill="#696969" />
-					  </svg>
-					  <input type="text" placeholder="Last Name" name="lastname"
-					  id="lastname">
-					</div>
-				  </div>
-				  <div class="col-sm-6">
-					<div class="input">
-					  <svg class="icon" width="16" height="12" viewBox="0 0 16 12" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-						  d="M14.5 0C15.3125 0 16 0.6875 16 1.5V10.5C16 11.3438 15.3125 12 14.5 12H1.5C0.65625 12 0 11.3438 0 10.5V1.5C0 0.6875 0.65625 0 1.5 0H14.5ZM14.5 1.5H1.5V2.78125C2.1875 3.375 3.3125 4.25 5.6875 6.125C6.21875 6.53125 7.25 7.53125 8 7.5C8.71875 7.53125 9.75 6.53125 10.2812 6.125C12.6562 4.25 13.7812 3.375 14.5 2.78125V1.5ZM1.5 10.5H14.5V4.71875C13.7812 5.28125 12.75 6.09375 11.2188 7.3125C10.5 7.84375 9.3125 9.03125 8 9C6.65625 9.03125 5.4375 7.84375 4.75 7.3125C3.21875 6.09375 2.1875 5.28125 1.5 4.71875V10.5Z"
-						  fill="#696969" />
-					  </svg>
-					  <input type="email" placeholder="Email Address" name="email"
-					  id="email">
-					</div>
-				  </div>
-				  <div class="col-sm-6">
-					<div class="input">
-					  <svg class="icon" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<rect x="0.75" y="0.75" width="14.5" height="10.5" rx="1.25" stroke="#696969" stroke-width="1.5"/>
-						<circle cx="8" cy="6" r="2" stroke="#696969" stroke-width="1.5"/>
-						<path d="M3 3.5H5" stroke="#696969" stroke-width="1.5" stroke-linecap="round"/>
-						<path d="M11 8.5H13" stroke="#696969" stroke-width="1.5" stroke-linecap="round"/>
-					  </svg>
-					  <input type="number" placeholder="Amount" id="amount"
-					  name="amount">
-					</div>
-				  </div>
-				</div>
-				
-				<textarea class="mt-4" name="message"
-				id="message" placeholder="Write a Message"></textarea>
-				<button type="submit" class="btn-two-rounded mt-30">Invest Now <i class="fa-regular fa-angle-right"></i></button>
-			  </form>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	</div>
-  </section>
-  <!-- Contact area end here -->
-			<!-- Main Footer -->
-			<footer class="main-footer footer-style-three pt-100">
-				<div class="container">
-					<div class="footer-cta">
-						<div class="sec-title">
-							<h2 class="title wow splt-txt" data-splitting>
-								Looking For Professional business consultant ?
-							</h2>
-							<p
-								class="text wow fadeInUp"
-								data-wow-delay="00ms"
-								data-wow-duration="1500ms"
-							>
-								At vero eos et accusamus et iusto odio dignissimos ducimus quiy
-								blanditiise praesentium voluptatum deleniti atque corrupti
-								dolorese
-							</p>
-						</div>
-						<div
-							class="btn-wrp wow fadeInUp"
-							data-wow-delay="200ms"
-							data-wow-duration="1500ms"
-						>
-							<a href="page-contact.html" class="cta-btn"
-								>Get Started Free <i class="fa-regular fa-arrow-up-right"></i
-							></a>
-							<p class="text">No credit card required</p>
-						</div>
-						<div class="bg-shape">
-							<img
-								src="{% static 'assets/images/shape/cta-line.png' %}"
-								alt="Image"
-							/>
-						</div>
-						<div class="arry">
-							<img
-								class="animation__arryLeftRight"
-								src="{% static 'assets/images/shape/cta-arry.png' %}"
-								alt="Image"
-							/>
-						</div>
-					</div>
-					<div class="widgets-section">
-						<div class="row g-5 g-xl-0">
-							<div class="col-lg-4 footer-column">
-								<div class="footer-widget about-widget">
-									<div class="logo">
-										<a href="index.html"
-											><img
-												src="{% static 'assets/images/logo2.png' %}"
-												alt="Logo"
-												style="width: 100px"
-											/></a>
-									</div>
-									<div class="widget-content">
-										<p class="text">
-											At vero eos et accusamus iusto odio dignissimos ducimus
-											blanditiise
-										</p>
-										<div class="input-feild">
-											<input type="text" placeholder="Email Address" />
-											<button>
-												<i class="fa-regular fa-arrow-up-right"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-8">
-								<div class="row g-4 g-xl-0">
-									<div class="col-sm-6 col-xl-3 footer-column">
-										<div class="footer-widget links-widget">
-											<h4 class="widget-title">Resource</h4>
-											<div class="widget-content">
-												<ul class="user-links">
-													<li><a href="#0">Product</a></li>
-													<li><a href="#0">Services</a></li>
-													<li><a href="#0">About Us</a></li>
-													<li><a href="#0">Benefits</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-xl-3 footer-column">
-										<div class="footer-widget links-widget">
-											<h4 class="widget-title">Quick Link</h4>
-											<div class="widget-content">
-												<ul class="user-links">
-													<li><a href="#0">Features</a></li>
-													<li><a href="#0">Pricing Plan</a></li>
-													<li><a href="#0">Best Program</a></li>
-													<li><a href="#0">Press Kit</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-xl-3 footer-column">
-										<div class="footer-widget links-widget">
-											<h4 class="widget-title">Company</h4>
-											<div class="widget-content">
-												<ul class="user-links">
-													<li><a href="#0">About</a></li>
-													<li><a href="#0">Team Member</a></li>
-													<li><a href="#0">Reviews</a></li>
-													<li><a href="#0">Latest News</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6 col-xl-3 footer-column">
-										<div class="footer-widget links-widget contact-widget">
-											<h4 class="widget-title">Contact</h4>
-											<div class="widget-content">
-												<ul class="user-links">
-													<li>
-														<i class="fa-light fa-location-dot"></i>
-														<a href="#0"
-															>55 Main Street, 2nd block Melbourne, Australia</a
-														>
-													</li>
-													<li>
-														<i class="fa-light fa-envelope"></i>
-														<a
-															href="https://html.kodesolution.com/cdn-cgi/l/email-protection#c6b5b3b6b6a9b4b286a1aba7afaae8a5a9ab"
-															><span
-																class="__cf_email__"
-																data-cfemail="196a6c6969766b6d597e74787075377a7674"
-																>[email&#160;protected]</span
-															></a
-														>
-													</li>
-													<li>
-														<i class="fa-light fa-phone-flip"></i>
-														<a href="tel:+0001234455">+000 (123) 44 55</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="footer-bottom">
-						<p class="copyright-text">
-							Copyright ©2025, <a href="#0">Design</a> All Rights Reserved
-						</p>
-						<ul class="footer-nav">
-							<li><a href="#0">Faqs</a></li>
-							<li><a href="#0">Setting</a></li>
-							<li><a href="#0">Privacy</a></li>
-							<li><a href="#0">Contact</a></li>
-						</ul>
-						<button class="goTop-btn">
-							<i class="fa-solid fa-angles-up"></i>
-							<i class="fa-solid fa-angles-up"></i>
-						</button>
-					</div>
-				</div>
-				<div class="sec-shape">
-					<img
-						class="animation__rotateY"
-						src="{% static 'assets/images/shape/dual-circle420.png' %}"
-						alt="Image"
-					/>
-				</div>
-				<div class="box-shape">
-					<div
-						class="box1 wow slideInUp"
-						data-wow-delay="200ms"
-						data-wow-duration="1500ms"
-					></div>
-					<div
-						class="box2 wow slideInLeft"
-						data-wow-delay="200ms"
-						data-wow-duration="1500ms"
-					></div>
-				</div>
-			</footer>
-			<!--End Main Footer -->
-		</div>
-		<!-- End Page Wrapper -->
-		<!-- Scroll To Top -->
-		<div class="scroll-to-top scroll-to-target" data-target="html">
-			<span class="fa fa-angle-up"></span>
-		</div>
-		<script
-			data-cfasync="false"
-			src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-		></script>
-		<script src="{% static 'assets/js/jquery.js' %}"></script>
-		<script src="{% static 'assets/js/popper.min.js' %}"></script>
-		<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-		<script src="{% static 'assets/js/slick.min.js' %}"></script>
-		<script src="{% static 'assets/js/slick-animation.min.js' %}"></script>
-		<script src="{% static 'assets/js/jquery.fancybox.js' %}"></script>
-		<script src="{% static 'assets/js/wow.js' %}"></script>
-		<script src="{% static 'assets/js/appear.js' %}"></script>
-		<script src="{% static 'assets/js/mixitup.js' %}"></script>
-		<script src="{% static 'assets/js/flatpickr.js' %}"></script>
-		<script src="{% static 'assets/js/swiper.min.js' %}"></script>
-		<script src="{% static 'assets/js/gsap.min.js' %}"></script>
-		<script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
-		<script src="{% static 'assets/js/SplitText.min.js' %}"></script>
-		<script src="{% static 'assets/js/nice-select.min.js' %}"></script>
-		<script src="{% static 'assets/js/knob.js' %}"></script>
-		<script src="{% static 'assets/js/parallax.js' %}"></script>
-		<script src="{% static 'assets/js/vanilla-tilt.js' %}"></script>
-		<script src="{% static 'assets/js/splitting.js' %}"></script>
-		<script src="{% static 'assets/js/splitType.js' %}"></script>
-		<script src="{% static 'assets/js/script-gsap.js' %}"></script>
-		<script src="{% static 'assets/js/script.js' %}"></script>
-	</body>
-
-	<!-- Mirrored from html.kodesolution.com/2025/consultez-html-v2/page-case-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Sep 2025 23:46:41 GMT -->
-</html>
+{% endblock %}
