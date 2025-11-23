@@ -9,7 +9,7 @@
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/logo/logo2.png' %}" />
 		<!-- Place favicon.ico in the root directory -->
 
 		<!-- CSS here -->
@@ -64,7 +64,7 @@
 						<div class="col-lg-4 d-none d-lg-block">
 							<div class="logo text-center">
 								<a href="index.html"
-									><img src="{% static 'assets/img/logo/w_logo.png' %}" alt=""
+									><img width="60" height="60" src="{% static 'assets/img/logo/logo2.png' %}" alt=""
 								/></a>
 							</div>
 						</div>
@@ -75,7 +75,44 @@
 								{% else %}
 								<div class="login"><a href="{% url 'main:login' %}">Login</a></div>
 								{% endif %}
-								
+								<form
+									method="get"
+									action="{% url 'main:businesses' %}"
+									style="display: inline-flex; align-items: center; gap: 8px; margin-left: 10px;"
+								>
+									<select
+										name="country"
+										class="form-select"
+										style="padding: 4px 8px; border-radius: 4px; border: 1px solid #e5e5e5; font-size: 12px;"
+										onchange="this.form.submit()"
+									>
+										<option value="">🌍 All locations</option>
+										<option value="Nigeria" {% if selected_country == 'Nigeria' %}selected{% endif %}>🇳🇬 Nigeria</option>
+										<option value="Ghana" {% if selected_country == 'Ghana' %}selected{% endif %}>🇬🇭 Ghana</option>
+										<option value="Kenya" {% if selected_country == 'Kenya' %}selected{% endif %}>🇰🇪 Kenya</option>
+										<option value="South Africa" {% if selected_country == 'South Africa' %}selected{% endif %}>🇿🇦 South Africa</option>
+										<option value="Egypt" {% if selected_country == 'Egypt' %}selected{% endif %}>🇪🇬 Egypt</option>
+										<option value="Morocco" {% if selected_country == 'Morocco' %}selected{% endif %}>🇲🇦 Morocco</option>
+										<option value="Ethiopia" {% if selected_country == 'Ethiopia' %}selected{% endif %}>🇪🇹 Ethiopia</option>
+										<option value="Uganda" {% if selected_country == 'Uganda' %}selected{% endif %}>🇺🇬 Uganda</option>
+										<option value="Tanzania" {% if selected_country == 'Tanzania' %}selected{% endif %}>🇹🇿 Tanzania</option>
+										<option value="Rwanda" {% if selected_country == 'Rwanda' %}selected{% endif %}>🇷🇼 Rwanda</option>
+										<option value="Ivory Coast" {% if selected_country == 'Ivory Coast' %}selected{% endif %}>🇨🇮 Ivory Coast</option>
+										<option value="Senegal" {% if selected_country == 'Senegal' %}selected{% endif %}>🇸🇳 Senegal</option>
+										<option value="Cameroon" {% if selected_country == 'Cameroon' %}selected{% endif %}>🇨🇲 Cameroon</option>
+										<option value="Zimbabwe" {% if selected_country == 'Zimbabwe' %}selected{% endif %}>🇿🇼 Zimbabwe</option>
+										<option value="Zambia" {% if selected_country == 'Zambia' %}selected{% endif %}>🇿🇲 Zambia</option>
+										<option value="Botswana" {% if selected_country == 'Botswana' %}selected{% endif %}>🇧🇼 Botswana</option>
+										<option value="Namibia" {% if selected_country == 'Namibia' %}selected{% endif %}>🇳🇦 Namibia</option>
+										<option value="Mozambique" {% if selected_country == 'Mozambique' %}selected{% endif %}>🇲🇿 Mozambique</option>
+										<option value="Angola" {% if selected_country == 'Angola' %}selected{% endif %}>🇦🇴 Angola</option>
+										<option value="Gambia" {% if selected_country == 'Gambia' %}selected{% endif %}>🇬🇲 Gambia</option>
+										<option value="Sierra Leone" {% if selected_country == 'Sierra Leone' %}selected{% endif %}>🇸🇱 Sierra Leone</option>
+										<option value="Liberia" {% if selected_country == 'Liberia' %}selected{% endif %}>🇱🇷 Liberia</option>
+										<option value="Mali" {% if selected_country == 'Mali' %}selected{% endif %}>🇲🇱 Mali</option>
+										<option value="Madagascar" {% if selected_country == 'Madagascar' %}selected{% endif %}>🇲🇬 Madagascar</option>
+									</select>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -91,9 +128,11 @@
 									<div class="logo d-none">
 										<a href="index.html"
 											><img
-												src="{% static 'assets/img/logo/w_logo.png' %}"
+												src="{% static 'assets/img/logo/logo2.png' %}"
 												alt="Logo"
-										/></a>
+												
+												style="width: 60px !important; height: 60px !important;"
+											/></a>
 									</div>
 									<div class="navbar-wrap main-menu d-none d-lg-flex">
 										<ul class="navigation">
@@ -171,9 +210,10 @@
 									<div class="fw-logo mb-30">
 										<a href="index.html"
 											><img
-												src="{% static 'assets/img/logo/w_logo.png' %}"
+												src="{% static 'assets/img/logo/logo2.png' %}"
 												alt=""
-										/></a>
+												style="width: 60px !important; height: 60px !important;"
+											/></a>
 									</div>
 									<div class="footer-contact-list mb-30">
 										<ul>

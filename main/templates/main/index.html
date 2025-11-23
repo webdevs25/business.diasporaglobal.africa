@@ -25,14 +25,14 @@
 										</h2>
 										<div class="slider-btn">
 											<a
-												href="causes.html"
+												href="{% url 'main:businesses' %}"
 												class="btn"
 												data-animation="fadeInLeft"
 												data-delay=".9s"
 												>Explore Projects <span>+</span></a
 											>
 											<a
-												href="donation.html"
+												href="{% url 'main:businesses' %}"
 												class="btn black-btn"
 												data-animation="fadeInRight"
 												data-delay=".9s"
@@ -144,8 +144,7 @@
 								<div class="features-content">
 									<h5>Add Your Listing</h5>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna.
+										Create a compelling profile in minutes. Upload your pitch deck, highlight your team's expertise, and tell your unique story. We provide the tools to make your venture stand out to the right investors.
 									</p>
 								</div>
 								<div class="features-icon">
@@ -165,10 +164,9 @@
 									<span>02</span>
 								</div>
 								<div class="features-content">
-									<h5>Add Price & Limit</h5>
+									<h5>Terms & Funding Goal</h5>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna.
+										Define your funding target and the equity or rewards you're offering. Our transparent system lets you set clear parameters, so you only connect with backers who are aligned with your vision and valuation.
 									</p>
 								</div>
 								<div class="features-icon">
@@ -190,8 +188,7 @@
 								<div class="features-content">
 									<h5>Get Backers</h5>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna.
+										Once you launch, your listing is promoted to our curated community of angel investors, venture capitalists, and strategic partners. Start receiving serious offers and begin your growth journey.
 									</p>
 								</div>
 								<div class="features-icon">
@@ -223,10 +220,7 @@
 						<div class="col-xl-6">
 							<div class="section-text mb-50">
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-									do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut aliquip.
+									We connect the analytical rigor of institutional-grade investing with the transformative potential of visionary entrepreneurs in high-growth markets around the world.
 								</p>
 							</div>
 						</div>
@@ -322,7 +316,7 @@
 									<span class="sub-title">-- Need Support --</span>
 									<h2 class="title">Get Backers</h2>
 									<div class="support-btn">
-										<a href="causes.html" class="btn"
+										<a href="{% url 'main:sign_up' %}" class="btn"
 											>Explore Projects<span>+</span></a
 										>
 									</div>
@@ -338,7 +332,7 @@
 									<span class="sub-title">-- Give Support --</span>
 									<h2 class="title">Support Projects</h2>
 									<div class="support-btn">
-										<a href="causes.html" class="btn"
+										<a href="{% url 'main:sign_up' %}" class="btn"
 											>Explore Projects<span>+</span></a
 										>
 									</div>

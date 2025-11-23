@@ -26,9 +26,14 @@ def IndexView(request):
     if request.method == "POST":
         pass
     else:
+        country = request.GET.get("country")
         donations = Donation.objects.all()
+        if country:
+            donations = donations.filter(location__icontains=country)
+
         context = {
             "donations": donations,
+            "selected_country": country,
         }
         return render(request, "main/index.html", context)
 
@@ -36,9 +41,14 @@ def DonationsView(request):
     if request.method == "POST":
         pass
     else:
+        country = request.GET.get("country")
         donations = Donation.objects.all()
+        if country:
+            donations = donations.filter(location__icontains=country)
+
         context = {
             "donations": donations,
+            "selected_country": country,
         }
         return render(request, "main/donation.html", context)
 

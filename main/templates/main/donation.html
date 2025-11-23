@@ -27,96 +27,6 @@
 </section>
 <!-- breadcrumb-area-end -->
 
-<!-- category-area -->
-<div class="category-area gray-bg pt-130 pb-70">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-20">
-				<a href="#" class="category-item">
-					<i
-						class="fas fa-laptop-code"
-						style="font-size: 24px; margin-bottom: 10px"
-					></i>
-					<span>Technology</span>
-				</a>
-			</div>
-			<div class="col-20">
-				<a href="#" class="category-item">
-					<i
-						class="fas fa-heartbeat"
-						style="font-size: 24px; margin-bottom: 10px"
-					></i>
-					<span>Healthcare</span>
-				</a>
-			</div>
-			<div class="col-20">
-				<a href="#" class="category-item">
-					<i
-						class="fas fa-graduation-cap"
-						style="font-size: 24px; margin-bottom: 10px"
-					></i>
-					<span>Education</span>
-				</a>
-			</div>
-			<div class="col-20">
-				<a href="#" class="category-item">
-					<i
-						class="fas fa-money-bill-wave"
-						style="font-size: 24px; margin-bottom: 10px"
-					></i>
-					<span>Finance</span>
-				</a>
-			</div>
-			<div class="col-20">
-				<a href="#" class="category-item">
-					<i
-						class="fas fa-home"
-						style="font-size: 24px; margin-bottom: 10px"
-					></i>
-					<span>Real Estate</span>
-				</a>
-			</div>
-			<div class="col-20">
-				<a href="#" class="category-item">
-					<i
-						class="fas fa-shopping-cart"
-						style="font-size: 24px; margin-bottom: 10px"
-					></i>
-					<span>Retail</span>
-				</a>
-			</div>
-			<div class="col-20">
-				<a href="#" class="category-item">
-					<i
-						class="fas fa-utensils"
-						style="font-size: 24px; margin-bottom: 10px"
-					></i>
-					<span>Food & Beverage</span>
-				</a>
-			</div>
-			<div class="col-20">
-				<a href="#" class="category-item">
-					<i
-						class="fas fa-leaf"
-						style="font-size: 24px; margin-bottom: 10px"
-					></i>
-					<span>Sustainability</span>
-				</a>
-			</div>
-			<div class="col-20">
-				<a href="#" class="category-item">
-					<i
-						class="fas fa-paint-brush"
-						style="font-size: 24px; margin-bottom: 10px"
-					></i>
-					<span>Creative</span>
-				</a>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- category-area-end -->
-
 <!-- project-area -->
 <section class="project-area pt-100 pb-100">
 	<div class="container">
@@ -222,33 +132,43 @@
 			<div class="pagination-wrapper">
 				<ul class="pagination">
 					{% if donations.has_previous %}
-					<li class="page-item">
-						<a
-							class="page-link"
-							href="?page={{ donations.previous_page_number }}"
-							aria-label="Previous"
-						>
-							<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>
-					{% endif %} {% for i in donations.paginator.page_range %} {% if donations.number == i %}
-					<li class="page-item active">
-						<span class="page-link">{{ i }}</span>
-					</li>
-					{% else %}
-					<li class="page-item">
-						<a class="page-link" href="?page={{ i }}">{{ i }}</a>
-					</li>
-					{% endif %} {% endfor %} {% if donations.has_next %}
-					<li class="page-item">
-						<a
-							class="page-link"
-							href="?page={{ donations.next_page_number }}"
-							aria-label="Next"
-						>
-							<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
+						<li class="page-item">
+							<a
+								class="page-link"
+								href="?page={{ donations.previous_page_number }}{% if selected_country %}&country={{ selected_country|urlencode }}{% endif %}"
+								aria-label="Previous"
+							>
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+					{% endif %}
+
+					{% for i in donations.paginator.page_range %}
+						{% if donations.number == i %}
+							<li class="page-item active">
+								<span class="page-link">{{ i }}</span>
+							</li>
+						{% else %}
+							<li class="page-item">
+								<a
+									class="page-link"
+									href="?page={{ i }}{% if selected_country %}&country={{ selected_country|urlencode }}{% endif %}"
+									>{{ i }}</a
+								>
+							</li>
+						{% endif %}
+					{% endfor %}
+
+					{% if donations.has_next %}
+						<li class="page-item">
+							<a
+								class="page-link"
+								href="?page={{ donations.next_page_number }}{% if selected_country %}&country={{ selected_country|urlencode }}{% endif %}"
+								aria-label="Next"
+							>
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
 					{% endif %}
 				</ul>
 			</div>
@@ -257,7 +177,5 @@
 	</div>
 </section>
 <!-- project-area-end -->
-
-
 
 {% endblock %}
